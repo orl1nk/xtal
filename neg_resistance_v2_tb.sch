@@ -28,7 +28,6 @@ N -20 -80 30 -80 {lab=B}
 N 30 -100 30 -80 {lab=B}
 N -190 -220 -190 -100 {lab=A}
 N -190 80 -190 110 {lab=GND}
-N -230 110 -190 110 {lab=GND}
 N 30 -220 30 -150 {lab=B}
 N -90 -220 -70 -220 {lab=#net1}
 N -170 -220 -160 -220 {lab=A}
@@ -53,27 +52,37 @@ N -250 -510 -230 -510 {lab=#net2}
 N -230 -510 -230 -450 {lab=#net2}
 N -230 -510 30 -510 {lab=#net2}
 N 30 -510 30 -450 {lab=#net2}
-N -190 -420 -190 -370 {lab=#net3}
-N -230 -370 -190 -370 {lab=#net3}
-N -230 -390 -230 -370 {lab=#net3}
-N -190 -420 -10 -420 {lab=#net3}
+N -190 -420 -190 -370 {lab=V_bias}
+N -230 -370 -190 -370 {lab=V_bias}
+N -230 -390 -230 -370 {lab=V_bias}
+N -190 -420 -10 -420 {lab=V_bias}
 N -250 -420 -230 -420 {lab=#net2}
 N -250 -510 -250 -420 {lab=#net2}
 N -320 -510 -250 -510 {lab=#net2}
 N 30 -420 50 -420 {lab=#net2}
 N 50 -510 50 -420 {lab=#net2}
 N 30 -510 50 -510 {lab=#net2}
-N 30 -390 30 -220 {lab=B}
-N -230 -350 -230 -330 {lab=#net3}
-N -230 -250 -230 110 {lab=GND}
-N -320 110 -230 110 {lab=GND}
-N -190 -350 -190 -300 {lab=#net3}
-N -230 -350 -190 -350 {lab=#net3}
-N -230 -370 -230 -350 {lab=#net3}
-N -240 -300 -230 -300 {lab=GND}
-N -240 -300 -240 -250 {lab=GND}
-N -240 -250 -230 -250 {lab=GND}
-N -230 -270 -230 -250 {lab=GND}
+N -230 -350 -230 -330 {lab=V_bias}
+N -240 110 -190 110 {lab=GND}
+N -190 -350 -190 -300 {lab=V_bias}
+N -230 -350 -190 -350 {lab=V_bias}
+N -230 -370 -230 -350 {lab=V_bias}
+N -240 -300 -230 -300 {lab=#net3}
+N -240 -300 -240 -250 {lab=#net3}
+N -240 -250 -230 -250 {lab=#net3}
+N -230 -270 -230 -250 {lab=#net3}
+N -240 -220 -240 -200 {lab=#net3}
+N -200 -220 -200 -170 {lab=#net3}
+N -240 -220 -200 -220 {lab=#net3}
+N -250 -170 -240 -170 {lab=GND}
+N -250 -170 -250 -120 {lab=GND}
+N -250 -120 -240 -120 {lab=GND}
+N -240 -140 -240 -120 {lab=GND}
+N -240 -250 -240 -220 {lab=#net3}
+N -240 -120 -240 110 {lab=GND}
+N -320 110 -240 110 {lab=GND}
+N 30 -390 30 -330 {lab=M5_Drain}
+N 30 -270 30 -220 {lab=B}
 C {sg13g2_pr/sg13_lv_nmos.sym} 10 -30 0 0 {name=M1
 l=0.8u
 w=0.2u
@@ -84,12 +93,12 @@ spiceprefix=X
 }
 C {capa.sym} -190 50 0 0 {name=C1
 m=1
-value=12p
+value=8p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 160 50 0 0 {name=C2
 m=1
-value=12p
+value=8p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} -110 -100 3 0 {name=C0
@@ -100,18 +109,20 @@ device="ceramic capacitor"}
 C {gnd.sym} -10 150 0 0 {name=l1 lab=GND}
 C {vsource.sym} -320 -90 0 0 {name=VDD value=1.2 savecurrent=false}
 C {isource.sym} -110 -50 1 0 {name=I1 value="dc 0 ac 1"}
-C {code_shown.sym} 170 -470 0 0 {name=s1 only_toplevel=false 
+C {code_shown.sym} 190 -540 0 0 {name=s1 only_toplevel=false 
 value="
+.include neg_resistance_v2_tb.save
 .control 
 
+
 save all
-save all save @n.xm1.nsg13_lv_nmos[gm]
+
 op
 write neg_resistance_v2_tb.raw
-set appendwrite
-ac lin 1000 30.0k 36.0k
-plot real(A-B) xlimit 30.0k 36.0k ylabel 'Negative Resistance'
-write neg_resistance_v2_tb.raw
+*set appendwrite
+*ac lin 1000 30.0k 36.0k
+*plot real(A-B) xlimit 30.0k 36.0k ylabel 'Negative Resistance'
+*write neg_resistance_v2_tb.raw
 
 .endc
 "}
@@ -141,33 +152,45 @@ C {devices/launcher.sym} 380 -200 0 0 {name=h3
 descr="simulate" 
 tclcommand="xschem save; xschem netlist; xschem simulate"
 }
-C {devices/launcher.sym} 380 -130 0 0 {name=h4
+C {devices/launcher.sym} 380 -150 0 0 {name=h4
 descr="annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
 C {devices/ngspice_get_value.sym} 100 -80 0 1 {name=r4 node=@n.xm1.nsg13_lv_nmos[gm]
 descr="gm="}
 C {sg13g2_pr/sg13_lv_pmos.sym} -210 -420 0 1 {name=M4
-l=0.5u
-w=0.25u
+l=2u
+w=0.5u
 ng=1
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 10 -420 0 0 {name=M5
-l=0.25u
-w=0.8u
+l=10u
+w=1u
 ng=1
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} -210 -300 0 1 {name=M6
-l=0.5u
-w=0.25u
+l=3u
+w=3u
 ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
+C {sg13g2_pr/sg13_lv_nmos.sym} -220 -170 0 1 {name=M7
+l=3u
+w=3u
+ng=1
+m=1
+model=sg13_lv_nmos
+spiceprefix=X
+}
+C {lab_pin.sym} -100 -420 1 0 {name=p3 sig_type=std_logic lab=V_bias}
+C {vsource.sym} 30 -300 0 0 {name=V_TEST value=0 savecurrent=false}
+C {lab_pin.sym} 30 -360 0 0 {name=p4 sig_type=std_logic lab=M5_Drain}
+C {sg13g2_pr/annotate_fet_params.sym} 220 -90 0 0 {name=annot1 ref=M1}

@@ -55,12 +55,12 @@ spiceprefix=X
 }
 C {capa.sym} 20 340 0 0 {name=C1
 m=1
-value=6p
+value=3p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 370 340 0 0 {name=C2
 m=1
-value=6p
+value=3p
 footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 200 440 0 0 {name=l1 lab=GND}

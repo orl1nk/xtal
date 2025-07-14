@@ -4,8 +4,52 @@ K {}
 V {}
 S {}
 E {}
+B 2 800 -400 1600 0 {flags=graph
+y1=-0.00074
+y2=0.57
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=2
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node=vout
+color=4
+dataset=-1
+unitx=1
+logx=0
+logy=0
+rawfile=$netlist_dir/osc_core_transient_v2_tb.raw
+sim_type=tran}
+B 2 800 30 1600 430 {flags=graph
+y1=-8e-06
+y2=1.3e-21
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=2
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+dataset=-1
+unitx=1
+logx=0
+logy=0
+rawfile=$netlist_dir/osc_core_transient_v2_tb.raw
+sim_type=tran
+color=5
+node=i(vdd)}
 N 200 400 200 440 {lab=GND}
-N 240 400 370 400 {lab=GND}
+N 270 400 370 400 {lab=GND}
 N 240 290 240 400 {lab=GND}
 N 200 400 240 400 {lab=GND}
 N 240 140 370 140 {lab=VOUT}
@@ -64,17 +108,25 @@ N -50 -330 -50 -280 {lab=#net6}
 N -90 -330 -50 -330 {lab=#net6}
 N -90 -350 -90 -330 {lab=#net6}
 N -100 -280 -90 -280 {lab=GND}
-N -100 -280 -100 -230 {lab=GND}
 N -310 -490 -310 -110 {lab=#net5}
 N -310 -490 -110 -490 {lab=#net5}
-N -90 -230 -90 -190 {lab=GND}
-N -100 -230 -90 -230 {lab=GND}
-N -90 -250 -90 -230 {lab=GND}
-N -210 -190 -90 -190 {lab=GND}
-N -210 -190 -210 400 {lab=GND}
+N -90 -250 -90 -210 {lab=#net7}
+N -210 -110 -210 400 {lab=GND}
 N -310 400 -210 400 {lab=GND}
 N -90 -490 240 -490 {lab=#net5}
 N -50 -400 200 -400 {lab=#net6}
+N -90 -210 -90 -190 {lab=#net7}
+N -50 -210 -50 -160 {lab=#net7}
+N -90 -210 -50 -210 {lab=#net7}
+N -100 -160 -90 -160 {lab=GND}
+N -100 -160 -100 -110 {lab=GND}
+N -100 -110 -90 -110 {lab=GND}
+N -90 -130 -90 -110 {lab=GND}
+N -210 -110 -100 -110 {lab=GND}
+N 240 260 270 260 {lab=GND}
+N 270 260 270 400 {lab=GND}
+N 240 400 270 400 {lab=GND}
+N -100 -280 -100 -160 {lab=GND}
 C {sg13g2_pr/sg13_lv_nmos.sym} 220 260 0 0 {name=M1
 l=1.0u
 w=0.5u
@@ -99,13 +151,14 @@ value="
 .control 
 save all
 
-tran 0.01m 7s
-plot VOUT 
+tran 0.005m 2s
+*plot VOUT
+*plot i(VDD) 
 *setplot tran1
 *linearize VOUT
 *set specwindow=blackman
-fft VOUT
-plot mag(VOUT)
+*fft VOUT
+*plot mag(VOUT)
 
 write osc_core_transient_v2_tb.raw
 
@@ -165,26 +218,37 @@ model=sg13_lv_pmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} -70 -400 0 1 {name=M4
-l=0.5u
-w=0.25u
+l=1u
+w=10u
 ng=1
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 220 -400 0 0 {name=M5
-l=0.25u
-w=0.8u
+l=40u
+w=1u
 ng=1
 m=1
 model=sg13_lv_pmos
-spiceprefix=X
-}
+spiceprefix=X}
 C {sg13g2_pr/sg13_lv_nmos.sym} -70 -280 0 1 {name=M6
-l=0.5u
-w=0.25u
+l=1u
+w=3u
 ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
+}
+C {sg13g2_pr/sg13_lv_nmos.sym} -70 -160 0 1 {name=M7
+l=1u
+w=3u
+ng=1
+m=1
+model=sg13_lv_nmos
+spiceprefix=X
+}
+C {devices/launcher.sym} 530 190 0 0 {name=h1
+descr="load waves" 
+tclcommand="xschem raw_read $netlist_dir/osc_core_transient_v2_tb.raw tran"
 }

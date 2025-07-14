@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.7 file_version=1.2}
 G {}
 K {}
 V {}
@@ -15,23 +15,23 @@ N 200 -30 200 70 {lab=XO2}
 N -150 -30 -100 -30 {lab=XO1}
 N 200 -30 250 -30 {lab=XO2}
 C {res.sym} -50 -30 3 0 {name=Rs
-value=50k
+value=57028.5
 footprint=1206
 device=resistor
 m=1}
 C {capa.sym} 30 -30 3 0 {name=Cs
 m=1
-value=1.39f
+value=6.408f
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 20 70 3 0 {name=C0
 m=1
-value=1.35p
+value=1.398p
 footprint=1206
 device="ceramic capacitor"}
 C {ind.sym} 120 -30 3 0 {name=Ls
 m=1
-value=17k
+value=3685.8
 footprint=1206
 device=inductor}
 C {iopin.sym} 250 -30 0 0 {name=p1 lab=XO2
