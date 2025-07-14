@@ -67,8 +67,6 @@ N -240 110 -190 110 {lab=GND}
 N -190 -350 -190 -300 {lab=V_bias}
 N -230 -350 -190 -350 {lab=V_bias}
 N -230 -370 -230 -350 {lab=V_bias}
-N -240 -300 -230 -300 {lab=#net3}
-N -240 -300 -240 -250 {lab=#net3}
 N -240 -250 -230 -250 {lab=#net3}
 N -230 -270 -230 -250 {lab=#net3}
 N -240 -220 -240 -200 {lab=#net3}
@@ -80,9 +78,12 @@ N -250 -120 -240 -120 {lab=GND}
 N -240 -140 -240 -120 {lab=GND}
 N -240 -250 -240 -220 {lab=#net3}
 N -240 -120 -240 110 {lab=GND}
-N -320 110 -240 110 {lab=GND}
+N -270 110 -240 110 {lab=GND}
 N 30 -390 30 -330 {lab=M5_Drain}
 N 30 -270 30 -220 {lab=B}
+N -270 -300 -230 -300 {lab=GND}
+N -270 -300 -270 110 {lab=GND}
+N -320 110 -270 110 {lab=GND}
 C {sg13g2_pr/sg13_lv_nmos.sym} 10 -30 0 0 {name=M1
 l=0.8u
 w=0.2u
@@ -119,9 +120,9 @@ save all
 
 op
 write neg_resistance_v2_tb.raw
-*set appendwrite
-*ac lin 1000 30.0k 36.0k
-*plot real(A-B) xlimit 30.0k 36.0k ylabel 'Negative Resistance'
+set appendwrite
+ac lin 1000 30.0k 36.0k
+plot real(A-B) xlimit 30.0k 36.0k ylabel 'Negative Resistance'
 *write neg_resistance_v2_tb.raw
 
 .endc
@@ -159,8 +160,8 @@ tclcommand="set show_hidden_texts 1; xschem annotate_op"
 C {devices/ngspice_get_value.sym} 100 -80 0 1 {name=r4 node=@n.xm1.nsg13_lv_nmos[gm]
 descr="gm="}
 C {sg13g2_pr/sg13_lv_pmos.sym} -210 -420 0 1 {name=M4
-l=2u
-w=0.5u
+l=10u
+w=5u
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -175,16 +176,16 @@ model=sg13_lv_pmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} -210 -300 0 1 {name=M6
-l=3u
-w=3u
+l=10u
+w=1u
 ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} -220 -170 0 1 {name=M7
-l=3u
-w=3u
+l=10u
+w=1u
 ng=1
 m=1
 model=sg13_lv_nmos
