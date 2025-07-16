@@ -80,18 +80,19 @@ N 40 -20 90 -20 {lab=#net1}
 N 240 260 270 260 {lab=GND}
 N 270 260 270 400 {lab=GND}
 N 240 400 270 400 {lab=GND}
-N -520 -420 -520 -100 {lab=#net3}
 N -310 400 -150 400 {lab=GND}
 N -520 -40 -520 400 {lab=GND}
-N -520 -420 0 -420 {lab=#net3}
-N -310 -320 0 -320 {lab=GND}
-N -310 -320 -310 400 {lab=GND}
+N -310 -290 -310 400 {lab=GND}
 N -520 400 -310 400 {lab=GND}
-N 150 -370 240 -370 {lab=VOUT}
-N 240 -370 240 -60 {lab=VOUT}
+N 150 -320 240 -320 {lab=VOUT}
+N 240 -320 240 -60 {lab=VOUT}
 N -150 140 -50 140 {lab=#net2}
 N -150 -60 -150 140 {lab=#net2}
 N 120 140 240 140 {lab=VOUT}
+N -30 -490 -30 -450 {lab=#net3}
+N -520 -490 -30 -490 {lab=#net3}
+N -520 -490 -520 -100 {lab=#net3}
+N -310 -290 -30 -290 {lab=GND}
 C {sg13g2_pr/sg13_lv_nmos.sym} 220 260 0 0 {name=M1
 l=1.0u
 w=0.5u
@@ -114,13 +115,13 @@ C {gnd.sym} 200 440 0 0 {name=l1 lab=GND}
 C {code_shown.sym} 350 -380 0 0 {name=s1 only_toplevel=false 
 value="
 *.include osc_core_transient_v3_tb.save
-.option KLU
+*.option KLU
 .save VOUT VDD#branch
 .control 
 
 
 *op
-tran 0.001m 2s
+tran 0.001m 1.8s
 plot VOUT
 *plot i(VDD) 
 *fft VOUT
@@ -167,5 +168,17 @@ C {devices/launcher.sym} 530 190 0 0 {name=h1
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/osc_core_transient_v3_tb.raw tran"
 }
-C {/foss/designs/xtal/osc_bias.sym} 0 -370 0 0 {name=x1}
-C {/foss/designs/xtal/xtal_model.sym} 40 150 0 0 {name=x2}
+C {osc_bias.sym} 0 -370 0 0 {name=x1}
+C {xtal_model.sym} 40 150 0 0 {name=x2}
+C {vsource.sym} -460 480 0 0 {name=V_CFG_1 value=0}
+C {vsource.sym} -460 580 0 0 {name=V_CFG_2 value=1.5}
+C {vsource.sym} -270 490 0 0 {name=V_CFG_3 value=1.5}
+C {gnd.sym} -460 510 0 0 {name=l2 lab=GND}
+C {gnd.sym} -460 610 0 0 {name=l3 lab=GND}
+C {gnd.sym} -270 520 0 0 {name=l4 lab=GND}
+C {lab_pin.sym} -460 450 0 0 {name=p2 sig_type=std_logic lab=cfg_1}
+C {lab_pin.sym} -460 550 0 0 {name=p3 sig_type=std_logic lab=cfg_2}
+C {lab_pin.sym} -270 460 0 0 {name=p4 sig_type=std_logic lab=cfg_3}
+C {lab_pin.sym} 150 -400 2 0 {name=p5 sig_type=std_logic lab=cfg_1}
+C {lab_pin.sym} 150 -380 2 0 {name=p6 sig_type=std_logic lab=cfg_2}
+C {lab_pin.sym} 150 -360 2 0 {name=p7 sig_type=std_logic lab=cfg_3}

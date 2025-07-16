@@ -154,7 +154,8 @@ C {gnd.sym} 200 440 0 0 {name=l1 lab=GND}
 C {code_shown.sym} 370 -360 0 0 {name=s1 only_toplevel=false 
 value="
 *.include osc_core_transient_v2_tb.save
-.option KLU
+*.option KLU
+*.save @n.xm1.nsg13_lv_nmos[gm]
 .save VOUT VDD#branch
 .control 
 
@@ -209,7 +210,7 @@ m=1
 value=3685.8
 footprint=1206
 device=inductor}
-C {vsource.sym} -520 -70 0 0 {name=VDD value="PULSE(0 1.2 1m)"}
+C {vsource.sym} -520 -70 0 0 {name=VDD value="PULSE(0 1.5 1m)"}
 C {sg13g2_pr/sg13_lv_pmos.sym} 0 -40 3 0 {name=M2
 l=2u
 w=2u
@@ -269,5 +270,5 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {vsource.sym} 240 -220 0 0 {name=V_TEST value=0 savecurrent=false}
 C {sg13g2_pr/annotate_fet_params.sym} 90 -350 0 0 {name=annot2 ref=M5}
+C {ammeter.sym} 240 -220 0 0 {name=Vmeas savecurrent=true spice_ignore=0}

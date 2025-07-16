@@ -1,4 +1,4 @@
-v {xschem version=3.4.6 file_version=1.2}
+v {xschem version=3.4.7 file_version=1.2}
 G {}
 K {type=subcircuit
 format="@name @pinlist @symname"
@@ -24,6 +24,6 @@ L 7 60 -10 80 -10 {}
 B 5 -92.5 -12.5 -87.5 -7.5 {name=XO1 dir=inout}
 B 5 77.5 -12.5 82.5 -7.5 {name=XO2 dir=inout}
 T {@symname} -53 34 0 0 0.3 0.3 {}
-T {@name} 15 -122 0 0 0.2 0.2 {}
+T {@name} 5 -72 0 0 0.2 0.2 {}
 T {XO1} -95 -14 0 1 0.2 0.2 {}
 T {XO2} 85 -6 2 1 0.2 0.2 {}
