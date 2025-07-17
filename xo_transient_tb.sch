@@ -13,7 +13,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=1.5
+x2=1
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -35,7 +35,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=1.5
+x2=1
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -64,19 +64,15 @@ N 120 200 120 400 {lab=GND}
 N -310 400 120 400 {lab=GND}
 N 270 -320 270 -230 {lab=#net2}
 N 270 -170 270 -0 {lab=#net4}
-N 340 90 520 90 {lab=#net5}
+N 40 200 40 270 {lab=V_OUT}
 C {gnd.sym} 120 440 0 0 {name=l1 lab=GND}
-C {code_shown.sym} 350 -380 0 0 {name=s1 only_toplevel=false 
+C {code_shown.sym} 340 -410 0 0 {name=s1 only_toplevel=false 
 value="
-*.include xo_op_tb.save
-*.save V_OUT VDD#branch
+
 .control 
 
 save V_OUT VDD#branch
-
-*save all
-
-tran 0.005m 1.5s
+tran 0.005m 1s
 plot V_OUT
 write xo_transient_tb.raw
 
@@ -115,4 +111,4 @@ C {lab_pin.sym} 150 -400 2 0 {name=p4 sig_type=std_logic lab=cfg_1}
 C {lab_pin.sym} 150 -380 2 0 {name=p5 sig_type=std_logic lab=cfg_2}
 C {lab_pin.sym} 150 -360 2 0 {name=p6 sig_type=std_logic lab=cfg_3}
 C {ammeter.sym} 270 -200 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
-C {lab_pin.sym} 0 200 3 0 {name=p7 sig_type=std_logic lab=V_OUT}
+C {lab_pin.sym} 40 270 2 0 {name=p7 sig_type=std_logic lab=V_OUT}
