@@ -49,12 +49,12 @@ color=7
 node=i(vdd)}
 N 120 400 120 440 {lab=GND}
 N -520 -40 -520 400 {lab=GND}
-N -310 -290 -310 400 {lab=GND}
+N -310 -250 -310 400 {lab=GND}
 N -520 400 -310 400 {lab=GND}
 N -30 -490 -30 -450 {lab=#net1}
 N -520 -490 -30 -490 {lab=#net1}
 N -520 -490 -520 -100 {lab=#net1}
-N -310 -290 -30 -290 {lab=GND}
+N -310 -250 -30 -250 {lab=GND}
 N 150 -320 270 -320 {lab=#net2}
 N -160 30 40 30 {lab=#net3}
 N 40 30 40 60 {lab=#net3}
@@ -72,7 +72,7 @@ value="
 .control 
 
 save V_OUT VDD#branch
-tran 0.005m 1s
+tran 0.0005m 2s
 plot V_OUT
 write xo_transient_tb.raw
 
@@ -90,7 +90,7 @@ C {devices/launcher.sym} 460 380 0 0 {name=h4
 descr="annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
-C {vsource.sym} -520 -70 0 0 {name=VDD value="PULSE(0 1.5 1m)"}
+C {vsource.sym} -520 -70 0 0 {name=VDD value="PULSE(0 1.5 1u)"}
 C {devices/launcher.sym} 460 420 0 0 {name=h1
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/xo_transient_tb.raw tran"
@@ -99,7 +99,7 @@ C {osc_bias.sym} 0 -370 0 0 {name=x1}
 C {xtal_model.sym} -170 120 1 0 {name=x2}
 C {xo_core.sym} 190 100 0 0 {name=x3}
 C {vsource.sym} -470 540 0 0 {name=V_CFG_1 value=0}
-C {vsource.sym} -470 640 0 0 {name=V_CFG_2 value=0}
+C {vsource.sym} -470 640 0 0 {name=V_CFG_2 value=1.5}
 C {vsource.sym} -280 550 0 0 {name=V_CFG_3 value=1.5}
 C {gnd.sym} -470 570 0 0 {name=l2 lab=GND}
 C {gnd.sym} -470 670 0 0 {name=l3 lab=GND}

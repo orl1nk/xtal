@@ -5,8 +5,8 @@ V {}
 S {}
 E {}
 B 2 760 -250 1560 150 {flags=graph
-y1=1.3
-y2=1.5
+y1=7e-08
+y2=7.1e-08
 ypos1=0
 ypos2=2
 divy=5
@@ -26,8 +26,8 @@ logx=0
 logy=0
 hilight_wave=0}
 B 2 760 150 1560 550 {flags=graph
-y1=-8.8e-08
-y2=-7.5e-08
+y1=-2.9e-08
+y2=-2.8e-08
 ypos1=0
 ypos2=2
 divy=5
@@ -47,8 +47,8 @@ logx=0
 logy=0
 }
 B 2 760 -1050 1560 -650 {flags=graph
-y1=0.43
-y2=1.2
+y1=-0.29
+y2=0.077
 ypos1=0
 ypos2=2
 divy=5
@@ -60,7 +60,7 @@ divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
-node=x1.stage_1
+node=x3.stage_1
 color=6
 dataset=-1
 unitx=1
@@ -68,8 +68,8 @@ logx=0
 logy=0
 }
 B 2 760 -650 1560 -250 {flags=graph
-y1=0.43
-y2=0.66
+y1=0
+y2=0.01
 ypos1=0
 ypos2=2
 divy=5
@@ -89,8 +89,8 @@ logx=0
 logy=0
 }
 B 2 -40 -1050 760 -650 {flags=graph
-y1=0.84
-y2=1.5
+y1=-0.44
+y2=0.57
 ypos1=0
 ypos2=2
 divy=5
@@ -102,7 +102,7 @@ divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
-node=x1.net1
+node=x3.net1
 color=6
 dataset=-1
 unitx=1
@@ -130,8 +130,8 @@ logy=0
 color=4
 node=net1}
 B 2 1560 -1050 2360 -650 {flags=graph
-y1=-2.3e-11
-y2=2.7e-08
+y1=-6.3e-11
+y2=9.8e-10
 ypos1=0
 ypos2=2
 divy=5
@@ -148,32 +148,26 @@ unitx=1
 logx=0
 logy=0
 color="4 7"
-node="i(v.x1.vmeas_pmos)
-i(v.x1.vmeas_nmos)"}
+node="i(v.x3.vmeas_pmos)
+i(v.x3.vmeas_nmos)"}
 N -260 0 -260 50 {lab=#net1}
 N -260 -0 -130 0 {lab=#net1}
-N -20 50 -20 110 {lab=GND}
-N 100 -0 150 -0 {lab=V_OUT}
-N -20 -80 -20 -50 {lab=VDD}
+N 462.5 -67.5 462.5 -7.5 {lab=GND}
+N 462.5 -87.5 512.5 -87.5 {lab=V_OUT}
 N -580 -350 -540 -350 {lab=cfg_1}
 N -580 -250 -540 -250 {lab=cfg_2}
 N -580 -140 -540 -140 {lab=cfg_3}
 N -220 -170 -0 -170 {lab=GND}
 N 0 -240 0 -170 {lab=GND}
 N -40 -240 0 -240 {lab=GND}
-N -40 -220 40 -220 {lab=#net2}
-N 40 -220 40 -110 {lab=#net2}
-N -80 -110 40 -110 {lab=#net2}
-N -80 -110 -80 -50 {lab=#net2}
-N -40 -200 -40 -130 {lab=#net3}
-N -150 -130 -40 -130 {lab=#net3}
-N -150 -130 -150 50 {lab=#net3}
-N -150 50 -80 50 {lab=#net3}
+N -130 -0 162.5 -107.5 {lab=#net1}
+N 462.5 -107.5 505 -107.5 {lab=VDD}
+N 505 -155 505 -107.5 {lab=VDD}
 C {vsource.sym} -540 -10 0 0 {name=VDD value=1.5}
 C {gnd.sym} -540 20 0 0 {name=l1 lab=GND}
-C {gnd.sym} -20 110 0 0 {name=l2 lab=GND}
+C {gnd.sym} 462.5 -15 0 0 {name=l2 lab=GND}
 C {lab_pin.sym} -540 -40 0 0 {name=p3 sig_type=std_logic lab=VDD}
-C {vsource.sym} -260 80 0 0 {name=V_IN value="SIN(100m 100m 32768)"}
+C {vsource.sym} -260 80 0 0 {name=V_IN value="SIN(100m 500m 32768)"}
 C {gnd.sym} -260 110 0 0 {name=l3 lab=GND}
 C {devices/code_shown.sym} -640 250 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
@@ -187,11 +181,11 @@ save all
 *dc V_IN 0 1.5 0.001 
 tran 0.0001m 0.1m
 
-meas tran yavg AVG i(vdd) from=0m to=0.1m
+*meas tran yavg AVG i(vdd) from=0m to=0.1m
 
 plot V_OUT
 *op
-write clock_gen.raw
+write clock_gen1.raw
 
 .endc
 "}
@@ -201,12 +195,11 @@ tclcommand="xschem save; xschem netlist; xschem simulate"
 }
 C {devices/launcher.sym} 220 240 0 0 {name=h1
 descr="load waves" 
-tclcommand="xschem raw_read $netlist_dir/clock_gen.raw tran"
+tclcommand="xschem raw_read $netlist_dir/clock_gen1.raw tran"
 }
-C {clock_gen.sym} -50 0 0 0 {name=x1}
-C {lab_pin.sym} 150 0 2 0 {name=p4 sig_type=std_logic lab=V_OUT}
+C {lab_pin.sym} 512.5 -87.5 2 0 {name=p4 sig_type=std_logic lab=V_OUT}
 C {osc_bias.sym} -190 -290 0 0 {name=x2}
-C {lab_pin.sym} -20 -80 0 0 {name=p1 sig_type=std_logic lab=VDD}
+C {lab_pin.sym} 505 -155 0 0 {name=p1 sig_type=std_logic lab=VDD}
 C {lab_pin.sym} -220 -370 0 0 {name=p2 sig_type=std_logic lab=VDD}
 C {gnd.sym} -220 -170 0 0 {name=l4 lab=GND}
 C {vsource.sym} -540 -320 0 0 {name=V_CFG_1 value=0}
@@ -225,3 +218,4 @@ C {devices/launcher.sym} 220 300 0 0 {name=h4
 descr="annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
+C {clock_gen_v1.sym} 312.5 -87.5 0 0 {name=x3}
