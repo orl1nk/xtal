@@ -1,8 +1,9 @@
-v {xschem version=3.4.7 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.2}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 B 2 800 -400 1600 0 {flags=graph
 y1=0.0034
@@ -97,14 +98,20 @@ N 270 -40 270 -0 {lab=#net5}
 N -130 -310 160 -310 {lab=#net3}
 N -310 -90 220 -90 {lab=GND}
 C {gnd.sym} 120 440 0 0 {name=l1 lab=GND}
-C {code_shown.sym} 340 -510 0 0 {name=s1 only_toplevel=false 
+C {code_shown.sym} 300 -670 0 0 {name=s1 only_toplevel=false 
 value="
-
+*.option rshunt = 1.0e13
+*.option cshunt = 1e-14
+*.option KLU
+*.options method = gear
+*.options gmin=1e-10
+.param w_p=0.40u l_p=0.13u
 .control 
 *save all
-save V_OSC V_OUT VDD#branch net3
-tran 0.005m 0.5s
-plot net3
+save V_OSC V_OUT VDD#branch net3 V_OUT_BUFF
+tran 0.005m 0.3s
+plot V_OSC V_OUT_BUFF
+*plot net3
 write debug_xo_transient_tb.raw
 
 .endc
@@ -112,6 +119,8 @@ write debug_xo_transient_tb.raw
 C {devices/code_shown.sym} -900 360 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
+.lib cornerHBT.lib hbt_typ
+.lib cornerRES.lib res_typ
 "}
 C {devices/launcher.sym} 460 340 0 0 {name=h3
 descr="simulate" 
@@ -121,7 +130,7 @@ C {devices/launcher.sym} 460 380 0 0 {name=h4
 descr="annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
-C {vsource.sym} -520 -70 0 0 {name=VDD value="PULSE(0 1.5 1m 1n)"}
+C {vsource.sym} -520 -70 0 0 {name=VDD value=1.5}
 C {devices/launcher.sym} 460 420 0 0 {name=h1
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/debug_xo_transient_tb.raw tran"
@@ -129,9 +138,9 @@ tclcommand="xschem raw_read $netlist_dir/debug_xo_transient_tb.raw tran"
 C {osc_bias.sym} -280 -380 0 0 {name=x1}
 C {xtal_model.sym} -170 120 1 0 {name=x2}
 C {xo_core.sym} 190 100 0 0 {name=x3}
-C {vsource.sym} -850 140 0 0 {name=V_CFG_1 value=0}
-C {vsource.sym} -850 240 0 0 {name=V_CFG_2 value=0}
-C {vsource.sym} -660 150 0 0 {name=V_CFG_3 value=1.5}
+C {vsource.sym} -850 140 0 0 {name=V_CFG_1 value="PULSE(1.5 0 1m)"}
+C {vsource.sym} -850 240 0 0 {name=V_CFG_2 value="PULSE(1.5 0 1m)"}
+C {vsource.sym} -660 150 0 0 {name=V_CFG_3 value="PULSE(1.5 0 1m)"}
 C {gnd.sym} -850 170 0 0 {name=l2 lab=GND}
 C {gnd.sym} -850 270 0 0 {name=l3 lab=GND}
 C {gnd.sym} -660 180 0 0 {name=l4 lab=GND}
@@ -142,6 +151,15 @@ C {lab_pin.sym} -130 -410 2 0 {name=p4 sig_type=std_logic lab=cfg_1}
 C {lab_pin.sym} -130 -390 2 0 {name=p5 sig_type=std_logic lab=cfg_2}
 C {lab_pin.sym} -130 -370 2 0 {name=p6 sig_type=std_logic lab=cfg_3}
 C {lab_pin.sym} 40 270 2 0 {name=p7 sig_type=std_logic lab=V_OSC}
-C {clock_gen.sym} 190 -220 0 0 {name=x4}
+C {clock_gen.sym} 190 -220 0 0 {name=x4
+}
 C {lab_pin.sym} 110 -220 0 0 {name=p8 sig_type=std_logic lab=V_OSC}
-C {lab_pin.sym} 340 -220 2 0 {name=p9 sig_type=std_logic lab=V_OUT}
+C {lab_pin.sym} 340 -220 2 0 {name=p9 sig_type=std_logic lab=V_OUT_BUFF}
+C {capa.sym} 10 -280 0 0 {name=C1
+m=1
+value=0.1p
+footprint=1206
+device="ceramic capacitor"
+}
+C {gnd.sym} 10 -250 0 0 {name=l5 lab=GND
+}

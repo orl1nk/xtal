@@ -1,8 +1,9 @@
-v {xschem version=3.4.7 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.2}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N 160 -270 160 -210 {lab=VDD}
 N 200 -180 200 -130 {lab=VP_BIAS}
@@ -14,7 +15,6 @@ N 160 -70 160 -50 {lab=VP_BIAS}
 N 200 -70 200 -20 {lab=VP_BIAS}
 N 160 -70 200 -70 {lab=VP_BIAS}
 N 160 10 160 50 {lab=#net1}
-N 450 -270 700 -270 {lab=VDD}
 N 620 -180 660 -180 {lab=VP_BIAS}
 N 160 50 160 70 {lab=#net1}
 N 200 50 200 100 {lab=#net1}
@@ -33,7 +33,6 @@ N 70 630 160 630 {lab=GND}
 N 700 190 700 360 {lab=I_BIAS_OUT}
 N 580 -20 660 -20 {lab=cfg_bias_1}
 N 620 -180 620 -130 {lab=VP_BIAS}
-N 450 -180 620 -180 {lab=VP_BIAS}
 N 620 -130 910 -130 {lab=VP_BIAS}
 N 910 -170 910 -130 {lab=VP_BIAS}
 N 910 -130 1200 -130 {lab=VP_BIAS}
@@ -81,24 +80,13 @@ N 70 -20 70 100 {lab=GND}
 N -80 -270 80 -270 {lab=VDD}
 N 380 -180 380 -100 {lab=VP_BIAS}
 N 200 -180 380 -180 {lab=VP_BIAS}
-N 380 -270 380 -260 {lab=VDD}
-N 160 -270 380 -270 {lab=VDD}
-N 380 -200 380 -180 {lab=VP_BIAS}
-N 450 -270 450 -250 {lab=VDD}
-N 380 -270 450 -270 {lab=VDD}
-N 450 -190 450 -180 {lab=VP_BIAS}
-N 380 -180 450 -180 {lab=VP_BIAS}
-N 160 290 160 320 {lab=#net7}
-N 200 290 200 350 {lab=#net7}
-N 160 290 200 290 {lab=#net7}
-N 70 350 160 350 {lab=GND}
-N 70 350 70 500 {lab=GND}
-N 70 210 70 350 {lab=GND}
-N 160 240 160 290 {lab=#net7}
-N 160 380 160 440 {lab=VN_BIAS}
+N 160 -270 700 -270 {lab=VDD}
+N 380 -180 620 -180 {lab=VP_BIAS}
+N 70 210 70 500 {lab=GND}
+N 160 240 160 440 {lab=VN_BIAS}
 C {sg13g2_pr/sg13_lv_pmos.sym} 180 -180 0 1 {name=M1
-l=10u
-w=0.25u
+l=0.13u
+w=0.2u
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -106,7 +94,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 180 -20 0 1 {name=M3
 l=10u
-w=0.25u
+w=0.2u
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -114,7 +102,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 180 100 0 1 {name=M4
 l=10u
-w=0.25u
+w=0.2u
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -122,7 +110,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 180 210 0 1 {name=M5
 l=10u
-w=0.25u
+w=0.2u
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -130,9 +118,9 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 680 -180 0 0 {name=M2
 l=10u
-w=2u
+w=0.25u
 ng=1
-m=1
+m=2
 model=sg13_lv_pmos
 spiceprefix=X}
 C {sg13g2_pr/annotate_fet_params.sym} 337.5 15 0 0 {name=annot1 ref=M2}
@@ -149,16 +137,16 @@ spiceprefix=X}
 C {iopin.sym} 580 -20 2 0 {name=p5 lab=cfg_bias_1}
 C {sg13g2_pr/sg13_lv_pmos.sym} 930 -170 0 0 {name=M7
 l=10u
-w=0.5u
+w=0.25u
 ng=1
-m=1
+m=4
 model=sg13_lv_pmos
 spiceprefix=X}
 C {sg13g2_pr/sg13_lv_pmos.sym} 1220 -170 0 0 {name=M8
 l=10u
-w=1u
+w=0.25u
 ng=1
-m=1
+m=20
 model=sg13_lv_pmos
 spiceprefix=X}
 C {sg13g2_pr/sg13_lv_pmos.sym} 930 -10 0 0 {name=M9
@@ -178,8 +166,8 @@ model=sg13_lv_pmos
 spiceprefix=X}
 C {iopin.sym} 1160 -10 2 0 {name=p7 lab=cfg_bias_3}
 C {sg13g2_pr/sg13_lv_nmos.sym} 180 500 0 1 {name=M11
-l=10u
-w=0.25u
+l=0.13u
+w=0.2u
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -187,24 +175,6 @@ spiceprefix=X
 }
 C {ammeter.sym} 160 580 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
 C {sg13g2_pr/annotate_fet_params.sym} 460 20 0 0 {name=annot2 ref=M6}
-C {sg13g2_pr/annotate_fet_params.sym} 1350 -260 0 0 {name=annot3 ref=M7}
+C {sg13g2_pr/annotate_fet_params.sym} 860 240 0 0 {name=annot3 ref=M7}
 C {opin.sym} 380 440 0 0 {name=p8 lab=VN_BIAS}
 C {opin.sym} 380 -100 1 0 {name=p9 lab=VP_BIAS}
-C {capa.sym} 380 -230 0 0 {name=C1
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
-C {res.sym} 450 -220 0 0 {name=R1
-value=100Meg
-footprint=1206
-device=resistor
-m=1}
-C {sg13g2_pr/sg13_lv_nmos.sym} 180 350 0 1 {name=M12
-l=10u
-w=0.25u
-ng=1
-m=1
-model=sg13_lv_nmos
-spiceprefix=X
-}

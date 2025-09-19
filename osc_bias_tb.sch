@@ -1,8 +1,9 @@
-v {xschem version=3.4.7 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.2}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N -210 30 -210 120 {lab=GND}
 N 0 120 170 120 {lab=GND}
@@ -73,22 +74,31 @@ descr="load waves"
 tclcommand="xschem raw_read $netlist_dir/osc_bias_tb.sch"
 }
 C {osc_bias.sym} -50 -60 0 0 {name=x1}
-C {vsource.sym} -620 -40 0 0 {name=V_CFG_1 value=0}
-C {vsource.sym} -620 60 0 0 {name=V_CFG_2 value="PULSE(1.5 0 200m)"}
-C {vsource.sym} -430 -30 0 0 {name=V_CFG_3 value="PULSE(1.5 0 300m)"}
-C {gnd.sym} -620 -10 0 0 {name=l2 lab=GND}
-C {gnd.sym} -620 90 0 0 {name=l3 lab=GND}
-C {gnd.sym} -430 0 0 0 {name=l4 lab=GND}
-C {lab_pin.sym} -620 -70 0 0 {name=p1 sig_type=std_logic lab=cfg_1}
+C {vsource.sym} -620 -40 0 0 {name=V_CFG_1 value=0
+spice_ignore=true}
+C {vsource.sym} -620 60 0 0 {name=V_CFG_2 value="PULSE(1.5 0 200m)"
+spice_ignore=true}
+C {vsource.sym} -430 -30 0 0 {name=V_CFG_3 value="PULSE(1.5 0 300m)"
+spice_ignore=true}
+C {gnd.sym} -620 -10 0 0 {name=l2 lab=GND
+spice_ignore=true}
+C {gnd.sym} -620 90 0 0 {name=l3 lab=GND
+spice_ignore=true}
+C {gnd.sym} -430 0 0 0 {name=l4 lab=GND
+spice_ignore=true}
+C {lab_pin.sym} -620 -70 0 0 {name=p1 sig_type=std_logic lab=cfg_1
+spice_ignore=true}
 C {gnd.sym} 0 150 0 0 {name=l5 lab=GND}
-C {lab_pin.sym} -620 30 0 0 {name=p2 sig_type=std_logic lab=cfg_2}
-C {lab_pin.sym} -430 -60 0 0 {name=p3 sig_type=std_logic lab=cfg_3}
+C {lab_pin.sym} -620 30 0 0 {name=p2 sig_type=std_logic lab=cfg_2
+spice_ignore=true}
+C {lab_pin.sym} -430 -60 0 0 {name=p3 sig_type=std_logic lab=cfg_3
+spice_ignore=true}
 C {lab_pin.sym} 100 -90 0 1 {name=p4 sig_type=std_logic lab=cfg_1}
 C {lab_pin.sym} 100 -70 0 1 {name=p5 sig_type=std_logic lab=cfg_2}
 C {lab_pin.sym} 100 -50 0 1 {name=p6 sig_type=std_logic lab=cfg_3}
 C {sg13g2_pr/sg13_lv_nmos.sym} 460 60 0 0 {name=M1
 l=10u
-w=0.3u
+w=0.44u
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -96,7 +106,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 270 -30 0 0 {name=M2
 l=10u
-w=0.8u
+w=0.5u
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -104,3 +114,13 @@ spiceprefix=X
 }
 C {sg13g2_pr/annotate_fet_params.sym} 660 -240 0 0 {name=annot1 ref=M1}
 C {sg13g2_pr/annotate_fet_params.sym} 500 -240 0 0 {name=annot2 ref=M2}
+C {vsource.sym} -610 290 0 0 {name=V_CFG_4 value=1.5
+}
+C {vsource.sym} -610 390 0 0 {name=V_CFG_5 value=0}
+C {vsource.sym} -420 300 0 0 {name=V_CFG_6 value=0}
+C {gnd.sym} -610 320 0 0 {name=l1 lab=GND}
+C {gnd.sym} -610 420 0 0 {name=l6 lab=GND}
+C {gnd.sym} -420 330 0 0 {name=l7 lab=GND}
+C {lab_pin.sym} -610 260 0 0 {name=p7 sig_type=std_logic lab=cfg_1}
+C {lab_pin.sym} -610 360 0 0 {name=p8 sig_type=std_logic lab=cfg_2}
+C {lab_pin.sym} -420 270 0 0 {name=p9 sig_type=std_logic lab=cfg_3}

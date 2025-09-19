@@ -7,7 +7,7 @@ F {}
 E {}
 N 640 -580 710 -580 {lab=#net1}
 N 640 -470 710 -470 {lab=#net1}
-N 750 -530 750 -500 {lab=V_OUT}
+N 750 -520 750 -500 {lab=V_OUT}
 N 750 -550 750 -530 {lab=V_OUT}
 N 750 -580 860 -580 {lab=M2_Source}
 N 750 -470 860 -470 {lab=GND}
@@ -25,15 +25,18 @@ N 750 -440 750 -320 {lab=GND}
 N 280 -520 280 -470 {lab=#net1}
 N 280 -520 640 -520 {lab=#net1}
 N 640 -580 640 -520 {lab=#net1}
+N 640 -520 660 -520 {lab=#net1}
+N 720 -520 750 -520 {lab=V_OUT}
+N 750 -530 750 -520 {lab=V_OUT}
 C {devices/code_shown.sym} -10 30 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
 "}
-C {devices/launcher.sym} 110 -240 0 0 {name=h3
+C {devices/launcher.sym} 100 -230 0 0 {name=h3
 descr="simulate" 
 tclcommand="xschem save; xschem netlist; xschem simulate"
 }
-C {devices/launcher.sym} 110 -190 0 0 {name=h4
+C {devices/launcher.sym} 100 -190 0 0 {name=h4
 descr="annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
@@ -70,9 +73,9 @@ C {code_shown.sym} 1112.5 -1127.5 0 0 {name=s2 only_toplevel=false value="
 .param w_p=3.35u l_p=0.13u
 .control 
 save all
-op
-write inverter_playground.raw
-set appendwrite
+*op
+*write inverter_playground.raw
+*set appendwrite
 
 dc V_IN 0 1.5 0.001
 plot V_OUT
@@ -97,7 +100,7 @@ set wr_singlescale
 set wr_vecnames
 
 compose w_vec start=0.2u stop=5u  step=0.05u
-compose l_vec start=0.13u stop=1u  step=0.1u
+compose l_vec start=0.13u stop=2u  step=0.1u
 
 foreach var1 $&l_vec
   alterparam l_p=$var1
@@ -126,4 +129,10 @@ write inverter_playground.raw
 
 .endc
 "
+spice_ignore=true}
+C {res.sym} 690 -520 1 0 {name=R1
+value=10Meg
+footprint=1206
+device=resistor
+m=1
 spice_ignore=true}

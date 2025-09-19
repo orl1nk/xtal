@@ -5,8 +5,8 @@ V {}
 S {}
 E {}
 B 2 750 -990 1550 -590 {flags=graph
-y1=0.65
-y2=0.86
+y1=0.081
+y2=1.5
 ypos1=0
 ypos2=2
 divy=5
@@ -50,8 +50,8 @@ sim_type=tran
 color=4
 node=V_SOURCE}
 B 2 750 -590 1550 -190 {flags=graph
-y1=1.9e-08
-y2=2e-08
+y1=2.1e-05
+y2=3.6e-05
 ypos1=0
 ypos2=2
 divy=5
@@ -72,8 +72,8 @@ sim_type=tran
 color=5
 node=i(vmeas_pmos)}
 B 2 750 -190 1550 210 {flags=graph
-y1=1.8e-08
-y2=2.1e-08
+y1=2.1e-05
+y2=3.6e-05
 ypos1=0
 ypos2=2
 divy=5
@@ -119,11 +119,13 @@ N -500 -480 -500 -340 {lab=#net1}
 N -690 -480 -500 -480 {lab=#net1}
 N 110 -400 110 -50 {lab=#net1}
 N 110 60 110 380 {lab=GND}
-N -0 -280 -0 -80 {lab=#net2}
-N 0 90 0 280 {lab=#net3}
+N 0 -280 0 -220 {lab=#net2}
+N 0 -160 0 -80 {lab=#net2}
+N 0 90 0 160 {lab=#net3}
+N 0 220 0 280 {lab=#net3}
 C {sg13g2_pr/sg13_lv_nmos.sym} -20 60 0 0 {name=M1
 l=0.13u
-w=1u
+w=0.5u
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -131,7 +133,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} -20 -50 0 0 {name=M2
 l=0.13u
-w=2u
+w=1.5u
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -196,3 +198,7 @@ C {osc_bias.sym} -470 -260 0 0 {name=x2}
 C {gnd.sym} -500 -140 0 0 {name=l4 lab=GND}
 C {lab_wire.sym} -150 0 0 0 {name=p2 sig_type=std_logic lab=V_IN_AC}
 C {lab_wire.sym} -380 0 0 0 {name=p3 sig_type=std_logic lab=V_SOURCE}
+C {isource.sym} 0 -190 0 0 {name=I0 value=10n
+spice_ignore=short}
+C {isource.sym} 0 190 0 0 {name=I1 value=10n
+spice_ignore=short}

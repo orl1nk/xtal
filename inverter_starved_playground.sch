@@ -5,20 +5,14 @@ V {}
 S {}
 F {}
 E {}
-N 640 -580 710 -580 {lab=V_IN1}
-N 640 -470 710 -470 {lab=V_IN1}
 N 750 -520 750 -500 {lab=V_OUT}
 N 750 -550 750 -530 {lab=V_OUT}
 N 750 -580 860 -580 {lab=#net1}
 N 750 -470 860 -470 {lab=GND}
 N 750 -530 1050 -530 {lab=V_OUT}
 N 860 -470 860 -240 {lab=GND}
-N 640 -520 640 -470 {lab=V_IN1}
 N 280 -520 280 -470 {lab=V_IN1}
-N 280 -520 640 -520 {lab=V_IN1}
-N 640 -580 640 -520 {lab=V_IN1}
-N 640 -520 660 -520 {lab=V_IN1}
-N 720 -520 750 -520 {lab=V_OUT}
+N 650 -520 670 -520 {lab=#net2}
 N 750 -530 750 -520 {lab=V_OUT}
 N 750 -960 750 -870 {lab=#net1}
 N 750 -960 860 -960 {lab=#net1}
@@ -33,7 +27,7 @@ N 750 -210 750 -140 {lab=GND}
 N 750 -240 860 -240 {lab=GND}
 N 560 -210 560 -140 {lab=GND}
 N 560 -140 750 -140 {lab=GND}
-N 650 -240 710 -240 {lab=#net2}
+N 650 -240 710 -240 {lab=#net3}
 N 540 -960 540 -870 {lab=#net1}
 N 520 -960 540 -960 {lab=#net1}
 N 520 -840 540 -840 {lab=#net1}
@@ -42,30 +36,49 @@ N 180 -960 520 -960 {lab=#net1}
 N 540 -240 560 -240 {lab=GND}
 N 540 -240 540 -140 {lab=GND}
 N 540 -140 560 -140 {lab=GND}
-N 640 -840 710 -840 {lab=#net3}
-N 540 -780 540 -750 {lab=#net3}
-N 540 -780 640 -780 {lab=#net3}
-N 640 -840 640 -780 {lab=#net3}
-N 540 -810 540 -780 {lab=#net3}
-N 580 -840 640 -840 {lab=#net3}
-N 560 -310 560 -270 {lab=#net2}
-N 650 -310 650 -240 {lab=#net2}
-N 600 -240 650 -240 {lab=#net2}
-N 560 -310 650 -310 {lab=#net2}
-N 560 -360 560 -310 {lab=#net2}
-N 550 -750 550 -630 {lab=#net3}
-N 540 -750 550 -750 {lab=#net3}
-N 550 -570 550 -360 {lab=#net2}
-N 550 -360 560 -360 {lab=#net2}
-N 750 -810 750 -780 {lab=#net4}
+N 640 -840 710 -840 {lab=#net4}
+N 540 -780 540 -750 {lab=#net4}
+N 540 -780 640 -780 {lab=#net4}
+N 640 -840 640 -780 {lab=#net4}
+N 540 -810 540 -780 {lab=#net4}
+N 580 -840 640 -840 {lab=#net4}
+N 560 -310 560 -270 {lab=#net3}
+N 650 -310 650 -240 {lab=#net3}
+N 600 -240 650 -240 {lab=#net3}
+N 560 -310 650 -310 {lab=#net3}
+N 560 -360 560 -310 {lab=#net3}
+N 550 -750 550 -630 {lab=#net4}
+N 540 -750 550 -750 {lab=#net4}
+N 550 -570 550 -360 {lab=#net3}
+N 550 -360 560 -360 {lab=#net3}
+N 750 -810 750 -780 {lab=#net5}
 N 750 -720 750 -610 {lab=M2_Source}
-N 750 -440 750 -390 {lab=#net5}
-N 750 -330 750 -270 {lab=#net6}
+N 750 -440 750 -390 {lab=#net6}
+N 750 -330 750 -270 {lab=#net7}
 N 180 -840 180 -790 {lab=GND}
 N 180 -960 180 -900 {lab=#net1}
-N 60 -520 60 -500 {lab=#net7}
+N 60 -520 60 -500 {lab=#net8}
 N 170 -520 280 -520 {lab=V_IN1}
-N 60 -520 120 -520 {lab=#net7}
+N 60 -520 120 -520 {lab=#net8}
+N 650 -520 650 -480 {lab=#net2}
+N 700 -530 700 -520 {lab=#net2}
+N 670 -530 670 -520 {lab=#net2}
+N 670 -530 700 -530 {lab=#net2}
+N 650 -480 700 -480 {lab=#net2}
+N 720 -520 750 -520 {lab=V_OUT}
+N 560 -520 570 -520 {lab=V_IN1}
+N 560 -520 560 -480 {lab=V_IN1}
+N 600 -530 600 -520 {lab=V_IN1}
+N 570 -530 600 -530 {lab=V_IN1}
+N 570 -530 570 -520 {lab=V_IN1}
+N 560 -480 600 -480 {lab=V_IN1}
+N 630 -520 650 -520 {lab=#net2}
+N 500 -520 560 -520 {lab=V_IN1}
+N 500 -580 710 -580 {lab=V_IN1}
+N 500 -580 500 -520 {lab=V_IN1}
+N 280 -520 500 -520 {lab=V_IN1}
+N 500 -470 710 -470 {lab=V_IN1}
+N 500 -520 500 -470 {lab=V_IN1}
 C {devices/code_shown.sym} -10 30 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
@@ -164,12 +177,6 @@ write inverter_starved_playground.raw
 .endc
 "
 spice_ignore=true}
-C {res.sym} 690 -520 1 0 {name=R1
-value=100Meg
-footprint=1206
-device=resistor
-m=1
-}
 C {sg13g2_pr/sg13_lv_nmos.sym} 730 -240 0 0 {name=M3
 l=\{l_p\}
 w=\{w_p\}
@@ -236,4 +243,20 @@ plot V_IN1 V_OUT
 .endc
 "}
 C {lab_wire.sym} 350 -520 0 0 {name=p2 sig_type=std_logic lab=V_IN1
+}
+C {sg13g2_pr/sg13_lv_pmos.sym} 700 -500 3 0 {name=M9
+l=2u
+w=2u
+ng=1
+m=1
+model=sg13_lv_pmos
+spiceprefix=X
+}
+C {sg13g2_pr/sg13_lv_pmos.sym} 600 -500 3 0 {name=M7
+l=2u
+w=2u
+ng=1
+m=1
+model=sg13_lv_pmos
+spiceprefix=X
 }
