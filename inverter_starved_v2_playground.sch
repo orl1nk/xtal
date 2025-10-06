@@ -5,6 +5,58 @@ V {}
 S {}
 F {}
 E {}
+B 2 3750 -910 5240 -300 {flags=graph,private_cursor
+y1=0
+y2=2
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=0.0015
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="v_out_buff
+reset_n
+trigger
+b0
+b1
+b2
+b3
+b4
+b5"
+color="4 12 7 10 10 10 10 10 10"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+digital=1
+hilight_wave=1}
+B 2 3740 -1680 5240 -1010 {flags=graph
+y1=-3e-05
+y2=1.6
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=0.0015
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="v_in1
+v_out_buff"
+color="9 11"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+}
 N 750 -520 750 -500 {lab=V_OUT_1}
 N 750 -550 750 -530 {lab=V_OUT_1}
 N 750 -580 860 -580 {lab=#net1}
@@ -131,7 +183,7 @@ N 1250 -560 1250 -540 {lab=V_OUT_2}
 N 1530 -590 1530 -540 {lab=V_OUT_2}
 N 1640 -540 1640 -510 {lab=V_OUT_3}
 N 2390 -540 2390 -490 {lab=V_OUT_4}
-N 2500 -540 2860 -540 {lab=V_OUT_BUFF}
+N 2500 -540 2930 -540 {lab=V_OUT_BUFF}
 N 2500 -570 2500 -540 {lab=V_OUT_BUFF}
 N 1540 -910 1540 -840 {lab=V_BIAS_P}
 N 1150 -310 1540 -310 {lab=V_BIAS_N}
@@ -176,7 +228,7 @@ N 2140 -140 2500 -140 {lab=GND}
 N 180 -800 270 -800 {lab=GND}
 N 180 -840 180 -800 {lab=GND}
 N 270 -800 270 -760 {lab=GND}
-N 270 -760 570 -760 {lab=GND}
+N 550 -760 570 -760 {lab=GND}
 N 520 -810 640 -810 {lab=V_BIAS_P}
 N 640 -840 640 -810 {lab=V_BIAS_P}
 N 520 -790 520 -650 {lab=V_BIAS_N}
@@ -186,11 +238,30 @@ N 520 -870 570 -870 {lab=#net1}
 N 570 -890 570 -870 {lab=#net1}
 N 180 -960 570 -960 {lab=#net1}
 N 520 -890 570 -890 {lab=#net1}
-N 570 -910 570 -890 {lab=#net1}
-N 520 -910 570 -910 {lab=#net1}
-N 570 -960 570 -910 {lab=#net1}
+N 570 -960 570 -890 {lab=#net1}
 N 520 -830 570 -830 {lab=GND}
 N 570 -830 570 -760 {lab=GND}
+N 520 -910 550 -910 {lab=GND}
+N 550 -910 550 -760 {lab=GND}
+N 270 -760 550 -760 {lab=GND}
+N 3050 -170 3050 -140 {lab=GND}
+N 3190 -450 3190 -170 {lab=GND}
+N 3050 -170 3190 -170 {lab=GND}
+N 3050 -180 3050 -170 {lab=GND}
+N 2930 -610 3110 -610 {lab=V_OUT_BUFF}
+N 2930 -610 2930 -540 {lab=V_OUT_BUFF}
+N 2610 -960 3190 -960 {lab=#net1}
+N 3190 -960 3190 -650 {lab=#net1}
+N 3270 -560 3310 -560 {lab=b3}
+N 3270 -530 3310 -530 {lab=b2}
+N 3270 -510 3310 -510 {lab=b1}
+N 3270 -490 3310 -490 {lab=b0}
+N 3270 -590 3310 -590 {lab=b4}
+N 3270 -610 3310 -610 {lab=b5}
+N 3270 -640 3310 -640 {lab=trigger}
+N 3270 -640 3270 -620 {lab=trigger}
+N 3050 -490 3110 -490 {lab=reset_n}
+N 3050 -260 3050 -240 {lab=reset_n}
 C {devices/code_shown.sym} -10 30 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
@@ -232,12 +303,12 @@ C {lab_wire.sym} 1050 -530 0 0 {name=p1 sig_type=std_logic lab=V_OUT_1
 }
 C {sg13g2_pr/annotate_fet_params.sym} 600 -450 0 0 {name=annot1 ref=M1}
 C {code_shown.sym} 742.5 -1317.5 0 0 {name=s2 only_toplevel=false value="
-.include inverter_starved_v1_playground.save
+.include inverter_starved_v2_playground.save
 .param w_p=0.45u l_p=0.13u
 .control 
 save all
 op
-write inverter_starved_v1_playground.raw
+write inverter_starved_v2_playground.raw
 
 
 .endc
@@ -319,6 +390,7 @@ device="ceramic capacitor"
 }
 C {code_shown.sym} 72.5 -1587.5 0 0 {name=s3 only_toplevel=false value="
 .include inverter_starved_v2_playground.save
+.include /foss/designs/xtal/xspice/cntr_trig_board.xspice
 .param w_p=0.40u l_p=0.13u
 .meas tran iavg_stage_1_pmos AVG i(Vmeas_PMOS1)
 .meas tran iavg_stage_1_nmos AVG i(Vmeas_NMOS2)
@@ -336,7 +408,8 @@ C {code_shown.sym} 72.5 -1587.5 0 0 {name=s3 only_toplevel=false value="
 save all
 
 
-tran 0.0001m 0.2m
+tran 0.1u 2m
+write inverter_starved_v2_playground.raw
 
 *plot V_IN1 V_OUT_1 V_OUT_2 V_OUT_3 V_OUT_4 V_OUT_BUFF
 plot V_IN1 V_OUT_BUFF
@@ -408,7 +481,7 @@ C {lab_wire.sym} 990 -910 0 0 {name=p6 sig_type=std_logic lab=V_BIAS_P
 }
 C {lab_wire.sym} 1000 -310 0 0 {name=p7 sig_type=std_logic lab=V_BIAS_N
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 690 -500 3 0 {name=M13
+C {sg13g2_pr/sg13_lv_pmos.sym} 690 -500 1 1 {name=M13
 l=2u
 w=0.5u
 ng=1
@@ -497,3 +570,20 @@ spiceprefix=X
 }
 C {lab_wire.sym} 2310 -540 0 0 {name=p9 sig_type=std_logic lab=V_OUT_4}
 C {osc_bias.sym} 370 -880 0 0 {name=x1}
+C {/foss/designs/xtal/xspice/cntr_trig_board.sym} 3190 -550 0 0 {name=x2}
+C {devices/gnd.sym} 3050 -140 0 0 {name=l5 lab=GND}
+C {devices/vsource.sym} 3050 -210 0 0 {name=vrst value=0
+}
+C {devices/lab_wire.sym} 3310 -560 0 1 {name=p11 sig_type=std_logic lab=b3}
+C {devices/lab_wire.sym} 3310 -530 0 1 {name=p12 sig_type=std_logic lab=b2}
+C {devices/lab_wire.sym} 3310 -510 0 1 {name=p13 sig_type=std_logic lab=b1}
+C {devices/lab_wire.sym} 3310 -490 0 1 {name=p14 sig_type=std_logic lab=b0}
+C {devices/lab_wire.sym} 3310 -590 0 1 {name=p15 sig_type=std_logic lab=b4}
+C {devices/lab_wire.sym} 3310 -610 0 1 {name=p16 sig_type=std_logic lab=b5}
+C {devices/lab_wire.sym} 3310 -640 0 1 {name=p17 sig_type=std_logic lab=trigger}
+C {devices/launcher.sym} 3800 -140 0 0 {name=h1
+descr="Load waves" 
+tclcommand="xschem raw_read $netlist_dir/inverter_starved_v2_playground.raw tran"
+}
+C {devices/lab_wire.sym} 3050 -260 0 0 {name=p10 sig_type=std_logic lab=reset_n}
+C {devices/lab_wire.sym} 3050 -490 0 0 {name=p18 sig_type=std_logic lab=reset_n}

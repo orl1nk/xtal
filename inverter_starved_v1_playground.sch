@@ -245,7 +245,7 @@ write inverter_starved_v1_playground.raw
 
 .endc
 "
-}
+spice_ignore=true}
 C {code_shown.sym} -1517.5 -1157.5 0 0 {name=s1 only_toplevel=false value="
 .include inverter_starved_playground.save
 .param w_p=2.5u l_p=0.13u
@@ -308,7 +308,7 @@ m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 580 -240 2 0 {name=M5
+C {sg13g2_pr/sg13_lv_nmos.sym} 580 -240 0 1 {name=M5
 l=\{l_p\}
 w=\{w_p\}
 ng=1
@@ -316,7 +316,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 560 -840 2 0 {name=M6
+C {sg13g2_pr/sg13_lv_pmos.sym} 560 -840 0 1 {name=M6
 l=\{l_p\}
 w=\{2*\{w_p\}\}
 ng=1
@@ -368,7 +368,7 @@ plot V_IN1 V_OUT_1 V_OUT_2 V_OUT_3 V_OUT_4 V_OUT_BUFF
 
 .endc
 "
-spice_ignore=true}
+}
 C {lab_wire.sym} 350 -520 0 0 {name=p2 sig_type=std_logic lab=V_IN1
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 1230 -480 0 0 {name=M7

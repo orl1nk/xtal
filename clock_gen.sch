@@ -163,8 +163,7 @@ N 3280 -80 3280 -20 {lab=V_OUT_4}
 N 3030 -440 3390 -440 {lab=VDD}
 N 3030 380 3390 380 {lab=VSS}
 N 940 -0 1050 -0 {lab=IN}
-N 1210 -0 1410 0 {lab=V_IN_1}
-N 1100 -0 1150 -0 {lab=#net19}
+N 1100 -0 1410 0 {lab=V_IN_1}
 C {sg13g2_pr/sg13_lv_nmos.sym} 1620 50 0 0 {name=M13
 l=\{l_p\}
 w=\{w_p\}
@@ -205,7 +204,7 @@ C {ammeter.sym} 1640 -230 0 0 {name=Vmeas_PMOS1 savecurrent=true spice_ignore=0}
 C {ammeter.sym} 1640 160 0 0 {name=Vmeas_NMOS1 savecurrent=true spice_ignore=0}
 C {capa.sym} 1075 0 3 0 {name=C2
 m=1
-value=1p
+value=50p
 footprint=1206
 device="ceramic capacitor"
 }
@@ -356,8 +355,3 @@ C {ipin.sym} 1530 -320 0 0 {name=p21 lab=VP_BIAS}
 C {ipin.sym} 1540 280 0 0 {name=p22 lab=VN_BIAS}
 C {lab_wire.sym} 1270 0 0 0 {name=p1 sig_type=std_logic lab=V_IN_1
 }
-C {res.sym} 1180 0 1 0 {name=R1
-value=0.1
-footprint=1206
-device=resistor
-m=1}

@@ -195,7 +195,7 @@ write clock_gen.raw
 
 .endc
 "}
-C {devices/launcher.sym} 220 180 0 0 {name=h3
+C {devices/launcher.sym} 230 180 0 0 {name=h3
 descr="simulate" 
 tclcommand="xschem save; xschem netlist; xschem simulate"
 }

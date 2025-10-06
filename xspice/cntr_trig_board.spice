@@ -1,0 +1,45 @@
+*SPICE netlist created from verilog structural netlist module cntr_trig_board by vlog2Spice (qflow)
+*This file may contain array delimiters, not for use in simulation.
+
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+
+.subckt cntr_trig_board VPWR VGND clk out[0] out[1] out[2] out[3]
++ out[4] out[5] reset trigger 
+
+X_18_ _07_ out[1] out[0] out[3] out[2] VPWR 
++ VGND
++ sg13g2_and4_1
+X_19_ _08_ out[4] _07_ VPWR VGND sg13g2_and2_1
+X_20_ _00_ out[5] _08_ VPWR VGND sg13g2_and2_2
+X_21_ _01_ out[1] out[0] VPWR VGND sg13g2_xor2_1
+X_22_ _09_ out[1] out[0] VPWR VGND sg13g2_nand2_1
+X_23_ _02_ out[2] _09_ VPWR VGND sg13g2_xnor2_1
+X_24_ _10_ out[1] out[0] out[2] VPWR VGND sg13g2_nand3_1
+X_25_ _03_ out[3] _10_ VPWR VGND sg13g2_xnor2_1
+X_26_ _04_ out[4] _07_ VPWR VGND sg13g2_xor2_1
+X_27_ _05_ out[5] _08_ VPWR VGND sg13g2_xor2_1
+X_28_ _06_ reset VPWR VGND sg13g2_inv_1
+X\out[0]$_DFF_PP0_  out[0] _11_ clk _11_ _06_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[1]$_DFF_PP0_  out[1] _17_ clk _01_ _06_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[2]$_DFF_PP0_  out[2] _16_ clk _02_ _06_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[3]$_DFF_PP0_  out[3] _15_ clk _03_ _06_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[4]$_DFF_PP0_  out[4] _14_ clk _04_ _06_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[5]$_DFF_PP0_  out[5] _13_ clk _05_ _06_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\trigger$_DFF_PP0_  trigger _12_ clk _00_ _06_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+
+.ends
+.end

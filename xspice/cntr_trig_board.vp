@@ -1,0 +1,233 @@
+/* Verilog module written by vlog2Verilog (qflow) */
+/* With explicit power connections */
+/* With case-insensitive names (SPICE-compatible) */
+
+module cntr_trig_board(
+    inout VPWR,
+    inout VGND,
+    input clk,
+    output [5:0] out,
+    input reset,
+    output trigger
+);
+
+wire [5:0] out ;
+wire _16_ ;
+wire _13_ ;
+wire _10_ ;
+wire trigger ;
+wire _07_ ;
+wire _04_ ;
+wire clk ;
+wire _01_ ;
+wire _15_ ;
+wire _12_ ;
+wire _09_ ;
+wire _06_ ;
+wire _03_ ;
+wire _00_ ;
+wire _17_ ;
+wire _14_ ;
+wire _11_ ;
+wire _08_ ;
+wire _05_ ;
+wire _02_ ;
+wire reset ;
+
+sg13g2_and4_1 _18_ (
+    .VDD(VPWR),
+    .VSS(VGND),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .A(out[1]),
+    .B(out[0]),
+    .C(out[3]),
+    .D(out[2]),
+    .X(_07_)
+);
+
+sg13g2_and2_1 _19_ (
+    .VDD(VPWR),
+    .VSS(VGND),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .A(out[4]),
+    .B(_07_),
+    .X(_08_)
+);
+
+sg13g2_and2_2 _20_ (
+    .VDD(VPWR),
+    .VSS(VGND),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .A(out[5]),
+    .B(_08_),
+    .X(_00_)
+);
+
+sg13g2_xor2_1 _21_ (
+    .VDD(VPWR),
+    .VSS(VGND),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .A(out[1]),
+    .B(out[0]),
+    .X(_01_)
+);
+
+sg13g2_nand2_1 _22_ (
+    .VDD(VPWR),
+    .VSS(VGND),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .A(out[1]),
+    .B(out[0]),
+    .Y(_09_)
+);
+
+sg13g2_xnor2_1 _23_ (
+    .VDD(VPWR),
+    .VSS(VGND),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .A(out[2]),
+    .B(_09_),
+    .Y(_02_)
+);
+
+sg13g2_nand3_1 _24_ (
+    .VDD(VPWR),
+    .VSS(VGND),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .A(out[1]),
+    .B(out[0]),
+    .C(out[2]),
+    .Y(_10_)
+);
+
+sg13g2_xnor2_1 _25_ (
+    .VDD(VPWR),
+    .VSS(VGND),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .A(out[3]),
+    .B(_10_),
+    .Y(_03_)
+);
+
+sg13g2_xor2_1 _26_ (
+    .VDD(VPWR),
+    .VSS(VGND),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .A(out[4]),
+    .B(_07_),
+    .X(_04_)
+);
+
+sg13g2_xor2_1 _27_ (
+    .VDD(VPWR),
+    .VSS(VGND),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .A(out[5]),
+    .B(_08_),
+    .X(_05_)
+);
+
+sg13g2_inv_1 _28_ (
+    .VDD(VPWR),
+    .VSS(VGND),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .A(reset),
+    .Y(_06_)
+);
+
+sg13g2_dfrbp_1 \out[0]$_DFF_PP0_  (
+    .VSS(VGND),
+    .VDD(VPWR),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .CLK(clk),
+    .D(_11_),
+    .Q(out[0]),
+    .Q_N(_11_),
+    .RESET_B(_06_)
+);
+
+sg13g2_dfrbp_1 \out[1]$_DFF_PP0_  (
+    .VSS(VGND),
+    .VDD(VPWR),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .CLK(clk),
+    .D(_01_),
+    .Q(out[1]),
+    .Q_N(_17_),
+    .RESET_B(_06_)
+);
+
+sg13g2_dfrbp_1 \out[2]$_DFF_PP0_  (
+    .VSS(VGND),
+    .VDD(VPWR),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .CLK(clk),
+    .D(_02_),
+    .Q(out[2]),
+    .Q_N(_16_),
+    .RESET_B(_06_)
+);
+
+sg13g2_dfrbp_1 \out[3]$_DFF_PP0_  (
+    .VSS(VGND),
+    .VDD(VPWR),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .CLK(clk),
+    .D(_03_),
+    .Q(out[3]),
+    .Q_N(_15_),
+    .RESET_B(_06_)
+);
+
+sg13g2_dfrbp_1 \out[4]$_DFF_PP0_  (
+    .VSS(VGND),
+    .VDD(VPWR),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .CLK(clk),
+    .D(_04_),
+    .Q(out[4]),
+    .Q_N(_14_),
+    .RESET_B(_06_)
+);
+
+sg13g2_dfrbp_1 \out[5]$_DFF_PP0_  (
+    .VSS(VGND),
+    .VDD(VPWR),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .CLK(clk),
+    .D(_05_),
+    .Q(out[5]),
+    .Q_N(_13_),
+    .RESET_B(_06_)
+);
+
+sg13g2_dfrbp_1 \trigger$_DFF_PP0_  (
+    .VSS(VGND),
+    .VDD(VPWR),
+    .VNB(VGND),
+    .VPB(VPWR),
+    .CLK(clk),
+    .D(_00_),
+    .Q(trigger),
+    .Q_N(_12_),
+    .RESET_B(_06_)
+);
+
+endmodule

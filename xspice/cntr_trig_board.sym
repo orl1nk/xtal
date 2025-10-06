@@ -1,0 +1,46 @@
+v {xschem version=3.4.8RC file_version=1.2}
+G {}
+K {type=primitive
+format="@name @pinlist @symname"
+template="name=x1"
+}
+V {}
+S {}
+F {}
+E {}
+L 4 -80 -60 -60 -60 {}
+L 4 -80 60 -60 60 {}
+L 4 0 -100 0 -80 {}
+L 4 0 80 0 100 {}
+L 7 60 -10 80 -10 {}
+L 7 60 20 80 20 {}
+L 7 60 40 80 40 {}
+L 7 60 60 80 60 {}
+L 7 60 -40 80 -40 {}
+L 7 60 -60 80 -60 {}
+L 7 60 -70 80 -70 {}
+B 5 -2.5 -102.5 2.5 -97.5 {name=VDD dir=inout}
+B 5 -2.5 97.5 2.5 102.5 {name=VSS dir=inout}
+B 5 -82.5 -62.5 -77.5 -57.5 {name=di_clock dir=in}
+B 5 77.5 57.5 82.5 62.5 {name=do_b0 dir=out}
+B 5 77.5 37.5 82.5 42.5 {name=do_b1 dir=out}
+B 5 77.5 17.5 82.5 22.5 {name=do_b2 dir=out}
+B 5 77.5 -12.5 82.5 -7.5 {name=do_b3 dir=out}
+B 5 77.5 -42.5 82.5 -37.5 {name=do_b4 dir=out}
+B 5 77.5 -62.5 82.5 -57.5 {name=do_b5 dir=out}
+B 5 -82.5 57.5 -77.5 62.5 {name=di_reset_n dir=in}
+B 5 77.5 -72.5 82.5 -67.5 {name=trigger_o dir=out}
+P 4 5 -60 -80 60 -80 60 80 -60 80 -60 -80 {}
+T {@symname} 26 -106 0 0 0.2 0.2 {}
+T {@name} 25 -122 0 0 0.2 0.2 {}
+T {di_clock} -15 -56 2 0 0.2 0.2 {}
+T {di_reset_n} 5 64 2 0 0.2 0.2 {}
+T {do_b3} 55 -16.5 0 1 0.2 0.2 {}
+T {do_b2} 55 13.5 0 1 0.2 0.2 {}
+T {do_b1} 55 33.5 0 1 0.2 0.2 {}
+T {do_b0} 55 53.5 0 1 0.2 0.2 {}
+T {VDD} -35 -104 0 0 0.2 0.2 {}
+T {VSS} -10 104 2 0 0.2 0.2 {}
+T {do_b4} 55 -46.5 0 1 0.2 0.2 {}
+T {do_b5} 55 -66.5 0 1 0.2 0.2 {}
+T {trigger_o} 55 -76.5 0 1 0.2 0.2 {}
