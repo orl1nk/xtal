@@ -1,0 +1,112 @@
+*SPICE netlist created from verilog structural netlist module cntr_trig_15b_board by vlog2Spice (qflow)
+*This file may contain array delimiters, not for use in simulation.
+
+.include /foss/pdks/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice/sg13g2_stdcell.spice
+
+.subckt cntr_trig_15b_board VPWR VGND clk out[0] out[1] out[2] out[3]
++ out[4] out[5] out[6] out[7] out[8] out[9] out[10] out[11]
++ out[12] out[13] out[14] reset trigger 
+
+X_54_ _16_ out[3] out[2] out[1] out[0] VPWR 
++ VGND
++ sg13g2_nand4_1
+X_55_ _17_ _16_ VPWR VGND sg13g2_buf_1
+X_56_ _18_ out[5] out[4] out[7] out[6] VPWR 
++ VGND
++ sg13g2_nand4_1
+X_57_ _19_ out[9] out[8] out[10] VPWR VGND sg13g2_nand3_1
+X_58_ _20_ out[11] out[12] VPWR VGND sg13g2_nand2_1
+X_59_ _21_ _17_ _18_ _19_ _20_ VPWR 
++ VGND
++ sg13g2_nor4_2
+X_60_ _00_ out[13] out[14] _21_ VPWR VGND sg13g2_and3_1
+X_61_ _06_ out[1] out[0] VPWR VGND sg13g2_xor2_1
+X_62_ _22_ out[1] out[0] VPWR VGND sg13g2_nand2_1
+X_63_ _07_ out[2] _22_ VPWR VGND sg13g2_xnor2_1
+X_64_ _23_ out[2] out[1] out[0] VPWR VGND sg13g2_nand3_1
+X_65_ _08_ out[3] _23_ VPWR VGND sg13g2_xnor2_1
+X_66_ _09_ out[4] _17_ VPWR VGND sg13g2_xnor2_1
+X_67_ _24_ out[3] out[2] out[1] out[0] VPWR 
++ VGND
++ sg13g2_and4_1
+X_68_ _25_ out[4] _24_ VPWR VGND sg13g2_nand2_1
+X_69_ _10_ out[5] _25_ VPWR VGND sg13g2_xnor2_1
+X_70_ _26_ out[5] out[4] _24_ VPWR VGND sg13g2_nand3_1
+X_71_ _11_ out[6] _26_ VPWR VGND sg13g2_xnor2_1
+X_72_ _27_ out[5] out[4] out[6] _24_ VPWR 
++ VGND
++ sg13g2_nand4_1
+X_73_ _12_ out[7] _27_ VPWR VGND sg13g2_xnor2_1
+X_74_ _28_ out[8] VPWR VGND sg13g2_inv_1
+X_75_ _29_ _17_ _18_ VPWR VGND sg13g2_nor2_1
+X_76_ _13_ _28_ _29_ VPWR VGND sg13g2_xnor2_1
+X_77_ _30_ _28_ _17_ _18_ VPWR VGND sg13g2_nor3_1
+X_78_ _14_ out[9] _30_ VPWR VGND sg13g2_xor2_1
+X_79_ _31_ out[9] out[8] VPWR VGND sg13g2_nand2_1
+X_80_ _32_ _17_ _18_ _31_ VPWR VGND sg13g2_nor3_1
+X_81_ _01_ out[10] _32_ VPWR VGND sg13g2_xor2_1
+X_82_ _33_ out[11] VPWR VGND sg13g2_inv_1
+X_83_ _34_ _17_ _18_ _19_ VPWR VGND sg13g2_nor3_1
+X_84_ _02_ _33_ _34_ VPWR VGND sg13g2_xnor2_1
+X_85_ _35_ _33_ _17_ _18_ _19_ VPWR 
++ VGND
++ sg13g2_nor4_1
+X_86_ _03_ out[12] _35_ VPWR VGND sg13g2_xor2_1
+X_87_ _04_ out[13] _21_ VPWR VGND sg13g2_xor2_1
+X_88_ _36_ out[11] out[13] out[12] VPWR VGND sg13g2_nand3_1
+X_89_ _37_ _17_ _18_ _19_ _36_ VPWR 
++ VGND
++ sg13g2_nor4_1
+X_90_ _05_ out[14] _37_ VPWR VGND sg13g2_xor2_1
+X_91_ _15_ reset VPWR VGND sg13g2_inv_1
+X\out[0]$_DFF_PP0_  out[0] _38_ clk _38_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[10]$_DFF_PP0_  out[10] _53_ clk _01_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[11]$_DFF_PP0_  out[11] _52_ clk _02_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[12]$_DFF_PP0_  out[12] _51_ clk _03_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[13]$_DFF_PP0_  out[13] _50_ clk _04_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[14]$_DFF_PP0_  out[14] _49_ clk _05_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[1]$_DFF_PP0_  out[1] _48_ clk _06_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[2]$_DFF_PP0_  out[2] _47_ clk _07_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[3]$_DFF_PP0_  out[3] _46_ clk _08_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[4]$_DFF_PP0_  out[4] _45_ clk _09_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[5]$_DFF_PP0_  out[5] _44_ clk _10_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[6]$_DFF_PP0_  out[6] _43_ clk _11_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[7]$_DFF_PP0_  out[7] _42_ clk _12_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[8]$_DFF_PP0_  out[8] _41_ clk _13_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\out[9]$_DFF_PP0_  out[9] _40_ clk _14_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+X\trigger$_DFF_PP0_  trigger _39_ clk _00_ _15_ VPWR 
++ VGND
++ sg13g2_dfrbp_1
+
+.ends
+.end

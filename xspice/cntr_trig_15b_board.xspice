@@ -1,0 +1,130 @@
+* XSpice netlist created from SPICE and liberty sources by spi2xspice.py
+*SPICE netlist created from verilog structural netlist module cntr_trig_15b_board by vlog2Spice (qflow)
+.subckt cntr_trig_15b_board a_VPWR a_VGND a_clk a_out_0_ a_out_1_ a_out_2_ a_out_3_ a_out_4_ a_out_5_ a_out_6_ a_out_7_ a_out_8_ a_out_9_ a_out_10_ a_out_11_ a_out_12_ a_out_13_ a_out_14_ a_reset a_trigger
+A_54_ [out_3_ out_2_ out_1_ out_0_] _16_ d_lut_sg13g2_nand4_1
+A_55_ [_16_] _17_ d_lut_sg13g2_buf_1
+A_56_ [out_5_ out_4_ out_7_ out_6_] _18_ d_lut_sg13g2_nand4_1
+A_57_ [out_9_ out_8_ out_10_] _19_ d_lut_sg13g2_nand3_1
+A_58_ [out_11_ out_12_] _20_ d_lut_sg13g2_nand2_1
+A_59_ [_17_ _18_ _19_ _20_] _21_ d_lut_sg13g2_nor4_2
+A_60_ [out_13_ out_14_ _21_] _00_ d_lut_sg13g2_and3_1
+A_61_ [out_1_ out_0_] _06_ d_lut_sg13g2_xor2_1
+A_62_ [out_1_ out_0_] _22_ d_lut_sg13g2_nand2_1
+A_63_ [out_2_ _22_] _07_ d_lut_sg13g2_xnor2_1
+A_64_ [out_2_ out_1_ out_0_] _23_ d_lut_sg13g2_nand3_1
+A_65_ [out_3_ _23_] _08_ d_lut_sg13g2_xnor2_1
+A_66_ [out_4_ _17_] _09_ d_lut_sg13g2_xnor2_1
+A_67_ [out_3_ out_2_ out_1_ out_0_] _24_ d_lut_sg13g2_and4_1
+A_68_ [out_4_ _24_] _25_ d_lut_sg13g2_nand2_1
+A_69_ [out_5_ _25_] _10_ d_lut_sg13g2_xnor2_1
+A_70_ [out_5_ out_4_ _24_] _26_ d_lut_sg13g2_nand3_1
+A_71_ [out_6_ _26_] _11_ d_lut_sg13g2_xnor2_1
+A_72_ [out_5_ out_4_ out_6_ _24_] _27_ d_lut_sg13g2_nand4_1
+A_73_ [out_7_ _27_] _12_ d_lut_sg13g2_xnor2_1
+A_74_ [out_8_] _28_ d_lut_sg13g2_inv_1
+A_75_ [_17_ _18_] _29_ d_lut_sg13g2_nor2_1
+A_76_ [_28_ _29_] _13_ d_lut_sg13g2_xnor2_1
+A_77_ [_28_ _17_ _18_] _30_ d_lut_sg13g2_nor3_1
+A_78_ [out_9_ _30_] _14_ d_lut_sg13g2_xor2_1
+A_79_ [out_9_ out_8_] _31_ d_lut_sg13g2_nand2_1
+A_80_ [_17_ _18_ _31_] _32_ d_lut_sg13g2_nor3_1
+A_81_ [out_10_ _32_] _01_ d_lut_sg13g2_xor2_1
+A_82_ [out_11_] _33_ d_lut_sg13g2_inv_1
+A_83_ [_17_ _18_ _19_] _34_ d_lut_sg13g2_nor3_1
+A_84_ [_33_ _34_] _02_ d_lut_sg13g2_xnor2_1
+A_85_ [_33_ _17_ _18_ _19_] _35_ d_lut_sg13g2_nor4_1
+A_86_ [out_12_ _35_] _03_ d_lut_sg13g2_xor2_1
+A_87_ [out_13_ _21_] _04_ d_lut_sg13g2_xor2_1
+A_88_ [out_11_ out_13_ out_12_] _36_ d_lut_sg13g2_nand3_1
+A_89_ [_17_ _18_ _19_ _36_] _37_ d_lut_sg13g2_nor4_1
+A_90_ [out_14_ _37_] _05_ d_lut_sg13g2_xor2_1
+A_91_ [reset] _15_ d_lut_sg13g2_inv_1
+A\out_0_$_DFF_PP0_ _38_ clk NULL ~_15_ out_0_ _38_ ddflop
+A\out_10_$_DFF_PP0_ _01_ clk NULL ~_15_ out_10_ _53_ ddflop
+A\out_11_$_DFF_PP0_ _02_ clk NULL ~_15_ out_11_ _52_ ddflop
+A\out_12_$_DFF_PP0_ _03_ clk NULL ~_15_ out_12_ _51_ ddflop
+A\out_13_$_DFF_PP0_ _04_ clk NULL ~_15_ out_13_ _50_ ddflop
+A\out_14_$_DFF_PP0_ _05_ clk NULL ~_15_ out_14_ _49_ ddflop
+A\out_1_$_DFF_PP0_ _06_ clk NULL ~_15_ out_1_ _48_ ddflop
+A\out_2_$_DFF_PP0_ _07_ clk NULL ~_15_ out_2_ _47_ ddflop
+A\out_3_$_DFF_PP0_ _08_ clk NULL ~_15_ out_3_ _46_ ddflop
+A\out_4_$_DFF_PP0_ _09_ clk NULL ~_15_ out_4_ _45_ ddflop
+A\out_5_$_DFF_PP0_ _10_ clk NULL ~_15_ out_5_ _44_ ddflop
+A\out_6_$_DFF_PP0_ _11_ clk NULL ~_15_ out_6_ _43_ ddflop
+A\out_7_$_DFF_PP0_ _12_ clk NULL ~_15_ out_7_ _42_ ddflop
+A\out_8_$_DFF_PP0_ _13_ clk NULL ~_15_ out_8_ _41_ ddflop
+A\out_9_$_DFF_PP0_ _14_ clk NULL ~_15_ out_9_ _40_ ddflop
+A\trigger$_DFF_PP0_ _00_ clk NULL ~_15_ trigger _39_ ddflop
+
+.model todig_1v5 adc_bridge(in_high=1.0 in_low=0.5 rise_delay=500p fall_delay=500p)
+.model toana_1v5 dac_bridge(out_high=1.5 out_low=0)
+
+.model ddflop d_dff(ic=0 rise_delay=50p fall_delay=50p)
+.model dlatch d_dlatch(ic=0 rise_delay=50p fall_delay=50p)
+.model dzero d_pulldown(load=250f)
+.model done d_pullup(load=250f)
+
+AA2D1 [a_VPWR] [VPWR] todig_1v5
+AA2D2 [a_VGND] [VGND] todig_1v5
+AA2D3 [a_clk] [clk] todig_1v5
+AD2A1 [out_0_] [a_out_0_] toana_1v5
+AD2A2 [out_1_] [a_out_1_] toana_1v5
+AD2A3 [out_2_] [a_out_2_] toana_1v5
+AD2A4 [out_3_] [a_out_3_] toana_1v5
+AD2A5 [out_4_] [a_out_4_] toana_1v5
+AD2A6 [out_5_] [a_out_5_] toana_1v5
+AD2A7 [out_6_] [a_out_6_] toana_1v5
+AD2A8 [out_7_] [a_out_7_] toana_1v5
+AD2A9 [out_8_] [a_out_8_] toana_1v5
+AD2A10 [out_9_] [a_out_9_] toana_1v5
+AD2A11 [out_10_] [a_out_10_] toana_1v5
+AD2A12 [out_11_] [a_out_11_] toana_1v5
+AD2A13 [out_12_] [a_out_12_] toana_1v5
+AD2A14 [out_13_] [a_out_13_] toana_1v5
+AD2A15 [out_14_] [a_out_14_] toana_1v5
+AA2D4 [a_reset] [reset] todig_1v5
+AD2A16 [trigger] [a_trigger] toana_1v5
+
+.ends
+
+* sg13g2_nand4_1 !(A*B*C*D)
+.model d_lut_sg13g2_nand4_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1111111111111110")
+* sg13g2_buf_1 A
+.model d_lut_sg13g2_buf_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* sg13g2_nand3_1 !(A*B*C)
+.model d_lut_sg13g2_nand3_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "11111110")
+* sg13g2_nand2_1 !(A*B)
+.model d_lut_sg13g2_nand2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1110")
+* sg13g2_nor4_2 !(A+B+C+D)
+.model d_lut_sg13g2_nor4_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1000000000000000")
+* sg13g2_and3_1 (A*B*C)
+.model d_lut_sg13g2_and3_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "00000001")
+* sg13g2_xor2_1 (A^B)
+.model d_lut_sg13g2_xor2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0110")
+* sg13g2_xnor2_1 !(A^B)
+.model d_lut_sg13g2_xnor2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1001")
+* sg13g2_and4_1 (A*B*C*D)
+.model d_lut_sg13g2_and4_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0000000000000001")
+* sg13g2_inv_1 !(A)
+.model d_lut_sg13g2_inv_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sg13g2_nor2_1 !(A+B)
+.model d_lut_sg13g2_nor2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1000")
+* sg13g2_nor3_1 !(A+B+C)
+.model d_lut_sg13g2_nor3_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10000000")
+* sg13g2_nor4_1 !(A+B+C+D)
+.model d_lut_sg13g2_nor4_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1000000000000000")
+* sg13g2_dfrbp_1 IQ
+.end
