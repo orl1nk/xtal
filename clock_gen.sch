@@ -5,13 +5,11 @@ V {}
 S {}
 F {}
 E {}
-N 1640 0 1640 20 {lab=V_OUT_1}
 N 1640 -30 1640 -10 {lab=V_OUT_1}
 N 1640 -60 1750 -60 {lab=VDD}
 N 1640 50 1750 50 {lab=VSS}
 N 1750 50 1750 280 {lab=VSS}
-N 1610 0 1640 0 {lab=V_OUT_1}
-N 1640 -10 1640 0 {lab=V_OUT_1}
+N 1640 -0 1640 20 {lab=V_OUT_1}
 N 1640 -440 1640 -350 {lab=VDD}
 N 1640 -440 1750 -440 {lab=VDD}
 N 1750 -320 1750 -60 {lab=VDD}
@@ -70,49 +68,35 @@ N 3500 30 3500 380 {lab=VSS}
 N 3390 -440 3500 -440 {lab=VDD}
 N 3500 -440 3500 -80 {lab=VDD}
 N 3390 380 3500 380 {lab=VSS}
-N 1530 0 1550 0 {lab=#net8}
-N 1530 0 1530 40 {lab=#net8}
-N 1580 -10 1580 0 {lab=#net8}
-N 1550 -10 1550 0 {lab=#net8}
-N 1550 -10 1580 -10 {lab=#net8}
-N 1530 40 1580 40 {lab=#net8}
-N 1440 0 1450 0 {lab=V_IN_1}
-N 1480 -10 1480 0 {lab=V_IN_1}
-N 1450 -10 1480 -10 {lab=V_IN_1}
-N 1450 -10 1450 0 {lab=V_IN_1}
-N 1440 40 1480 40 {lab=V_IN_1}
-N 1510 0 1530 0 {lab=#net8}
-N 1440 0 1440 40 {lab=V_IN_1}
 N 1410 50 1600 50 {lab=V_IN_1}
 N 1410 0 1410 50 {lab=V_IN_1}
-N 1410 0 1440 0 {lab=V_IN_1}
 N 1410 -60 1600 -60 {lab=V_IN_1}
 N 1410 -60 1410 0 {lab=V_IN_1}
 N 3390 -440 3390 -290 {lab=VDD}
-N 3390 -230 3390 -110 {lab=#net9}
-N 3390 60 3390 180 {lab=#net10}
+N 3390 -230 3390 -110 {lab=#net8}
+N 3390 60 3390 180 {lab=#net9}
 N 3390 240 3390 380 {lab=VSS}
 N 2420 -70 2490 -70 {lab=V_OUT_2}
 N 2420 40 2490 40 {lab=V_OUT_2}
 N 2530 -70 2640 -70 {lab=VDD}
 N 2530 40 2640 40 {lab=VSS}
-N 2530 70 2530 120 {lab=#net11}
+N 2530 70 2530 120 {lab=#net10}
 N 2530 380 2640 380 {lab=VSS}
 N 2530 -440 2640 -440 {lab=VDD}
 N 2530 -440 2530 -350 {lab=VDD}
 N 2530 -320 2640 -320 {lab=VDD}
 N 2640 -440 2640 -320 {lab=VDD}
 N 2430 -320 2490 -320 {lab=VP_BIAS}
-N 2530 -290 2530 -260 {lab=#net12}
+N 2530 -290 2530 -260 {lab=#net11}
 N 2640 -320 2640 -70 {lab=VDD}
 N 2250 -440 2530 -440 {lab=VDD}
-N 2530 -200 2530 -100 {lab=#net13}
+N 2530 -200 2530 -100 {lab=#net12}
 N 2640 40 2640 270 {lab=VSS}
 N 2640 270 2640 380 {lab=VSS}
 N 2530 300 2530 380 {lab=VSS}
 N 2530 270 2640 270 {lab=VSS}
 N 2430 270 2490 270 {lab=VN_BIAS}
-N 2530 180 2530 240 {lab=#net14}
+N 2530 180 2530 240 {lab=#net13}
 N 2250 380 2530 380 {lab=VSS}
 N 2420 -20 2420 40 {lab=V_OUT_2}
 N 2140 -20 2420 -20 {lab=V_OUT_2}
@@ -129,23 +113,23 @@ N 2810 -70 2880 -70 {lab=V_OUT_3}
 N 2810 40 2880 40 {lab=V_OUT_3}
 N 2920 -70 3030 -70 {lab=VDD}
 N 2920 40 3030 40 {lab=VSS}
-N 2920 70 2920 120 {lab=#net15}
+N 2920 70 2920 120 {lab=#net14}
 N 2920 380 3030 380 {lab=VSS}
 N 2920 -440 3030 -440 {lab=VDD}
 N 2920 -440 2920 -350 {lab=VDD}
 N 2920 -320 3030 -320 {lab=VDD}
 N 3030 -440 3030 -320 {lab=VDD}
 N 2820 -320 2880 -320 {lab=VP_BIAS}
-N 2920 -290 2920 -260 {lab=#net16}
+N 2920 -290 2920 -260 {lab=#net15}
 N 3030 -320 3030 -70 {lab=VDD}
 N 2640 -440 2920 -440 {lab=VDD}
-N 2920 -200 2920 -100 {lab=#net17}
+N 2920 -200 2920 -100 {lab=#net16}
 N 3030 40 3030 270 {lab=VSS}
 N 3030 270 3030 380 {lab=VSS}
 N 2920 300 2920 380 {lab=VSS}
 N 2920 270 3030 270 {lab=VSS}
 N 2820 270 2880 270 {lab=VN_BIAS}
-N 2920 180 2920 240 {lab=#net18}
+N 2920 180 2920 240 {lab=#net17}
 N 2640 380 2920 380 {lab=VSS}
 N 2810 -20 2810 40 {lab=V_OUT_3}
 N 2530 -20 2810 -20 {lab=V_OUT_3}
@@ -164,6 +148,22 @@ N 3030 -440 3390 -440 {lab=VDD}
 N 3030 380 3390 380 {lab=VSS}
 N 940 -0 1050 -0 {lab=IN}
 N 1100 -0 1410 0 {lab=V_IN_1}
+N 1430 0 1440 0 {lab=V_IN_1}
+N 1430 40 1470 40 {lab=V_IN_1}
+N 1430 0 1430 40 {lab=V_IN_1}
+N 1560 40 1600 40 {lab=V_OUT_1}
+N 1600 0 1600 40 {lab=V_OUT_1}
+N 1590 0 1600 0 {lab=V_OUT_1}
+N 1500 0 1530 0 {lab=#net18}
+N 1440 -30 1440 0 {lab=V_IN_1}
+N 1440 -30 1470 -30 {lab=V_IN_1}
+N 1470 -30 1470 0 {lab=V_IN_1}
+N 1560 -30 1560 0 {lab=V_OUT_1}
+N 1560 -30 1600 -30 {lab=V_OUT_1}
+N 1600 -30 1600 0 {lab=V_OUT_1}
+N 1410 0 1430 -0 {lab=V_IN_1}
+N 1600 -0 1640 -0 {lab=V_OUT_1}
+N 1640 -10 1640 -0 {lab=V_OUT_1}
 C {sg13g2_pr/sg13_lv_nmos.sym} 1620 50 0 0 {name=M13
 l=\{l_p\}
 w=\{w_p\}
@@ -204,7 +204,7 @@ C {ammeter.sym} 1640 -230 0 0 {name=Vmeas_PMOS1 savecurrent=true spice_ignore=0}
 C {ammeter.sym} 1640 160 0 0 {name=Vmeas_NMOS1 savecurrent=true spice_ignore=0}
 C {capa.sym} 1075 0 3 0 {name=C2
 m=1
-value=50p
+value=100p
 footprint=1206
 device="ceramic capacitor"
 }
@@ -260,22 +260,6 @@ model=sg13_lv_pmos
 spiceprefix=X
 }
 C {lab_wire.sym} 2780 -20 0 0 {name=p13 sig_type=std_logic lab=V_OUT_3}
-C {sg13g2_pr/sg13_lv_pmos.sym} 1580 20 3 0 {name=M23
-l=2u
-w=0.5u
-ng=1
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {sg13g2_pr/sg13_lv_pmos.sym} 1480 20 3 0 {name=M24
-l=2u
-w=0.5u
-ng=1
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
 C {ammeter.sym} 3390 -260 0 0 {name=Vmeas_PMOS_OUT savecurrent=true spice_ignore=0}
 C {ammeter.sym} 3390 210 0 0 {name=Vmeas_NMOS_OUT savecurrent=true spice_ignore=0}
 C {sg13g2_pr/sg13_lv_nmos.sym} 2510 40 0 0 {name=M25
@@ -354,4 +338,20 @@ C {iopin.sym} 1640 -440 3 0 {name=p16 lab=VDD}
 C {ipin.sym} 1530 -320 0 0 {name=p21 lab=VP_BIAS}
 C {ipin.sym} 1540 280 0 0 {name=p22 lab=VN_BIAS}
 C {lab_wire.sym} 1270 0 0 0 {name=p1 sig_type=std_logic lab=V_IN_1
+}
+C {sg13g2_pr/sg13_lv_pmos.sym} 1560 20 1 1 {name=M1
+l=2u
+w=0.5u
+ng=1
+m=1
+model=sg13_lv_pmos
+spiceprefix=X
+}
+C {sg13g2_pr/sg13_lv_pmos.sym} 1470 20 3 0 {name=M2
+l=2u
+w=0.5u
+ng=1
+m=1
+model=sg13_lv_pmos
+spiceprefix=X
 }

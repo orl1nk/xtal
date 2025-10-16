@@ -60,9 +60,9 @@ C {lab_wire.sym} 750 -670 0 0 {name=p5 sig_type=std_logic lab=M2_Source}
 C {vsource.sym} 180 -450 0 0 {name=VDD value=1.5}
 C {gnd.sym} 180 -420 0 0 {name=l2 lab=GND}
 C {vsource.sym} 280 -440 0 0 {name=V_IN value=0.75
-}
+spice_ignore=true}
 C {gnd.sym} 280 -410 0 0 {name=l3 lab=GND
-}
+spice_ignore=true}
 C {gnd.sym} 750 -240 0 0 {name=l1 lab=GND
 }
 C {lab_wire.sym} 1050 -530 0 0 {name=p1 sig_type=std_logic lab=V_OUT}
@@ -70,12 +70,12 @@ C {sg13g2_pr/annotate_fet_params.sym} 530 -430 0 0 {name=annot1 ref=M1}
 C {sg13g2_pr/annotate_fet_params.sym} 530 -690 0 0 {name=annot2 ref=M2}
 C {code_shown.sym} 1112.5 -1127.5 0 0 {name=s2 only_toplevel=false value="
 .include inverter_playground.save
-.param w_p=3.35u l_p=0.13u
+.param w_p=0.650u l_p=0.145u
 .control 
 save all
-*op
-*write inverter_playground.raw
-*set appendwrite
+op
+write inverter_playground.raw
+set appendwrite
 
 dc V_IN 0 1.5 0.001
 plot V_OUT
@@ -100,7 +100,7 @@ set wr_singlescale
 set wr_vecnames
 
 compose w_vec start=0.2u stop=5u  step=0.05u
-compose l_vec start=0.13u stop=2u  step=0.1u
+compose l_vec start=0.13u stop=0.2u  step=0.005u
 
 foreach var1 $&l_vec
   alterparam l_p=$var1
@@ -109,7 +109,8 @@ foreach var1 $&l_vec
   	alterparam w_p=$var2
   	reset
   	run 
-  	wrdata sweep_inverter.txt @n.xm2.nsg13_lv_pmos[l]  @n.xm1.nsg13_lv_nmos[l] @n.xm2.nsg13_lv_pmos[w] @n.xm1.nsg13_lv_nmos[w]
+  	*wrdata sweep_inverter_test.txt @n.xm2.nsg13_lv_pmos[l]  @n.xm1.nsg13_lv_nmos[l] @n.xm2.nsg13_lv_pmos[w] @n.xm1.nsg13_lv_nmos[w]
+         wrdata sweep_inverter_yoyo.txt @n.xm1.nsg13_lv_nmos[l] @n.xm1.nsg13_lv_nmos[w] @n.xm2.nsg13_lv_pmos[w] @n.xm1.nsg13_lv_nmos[w]
   	destroy all
   	set appendwrite
   	unset set wr_vecnames
@@ -135,4 +136,4 @@ value=10Meg
 footprint=1206
 device=resistor
 m=1
-spice_ignore=true}
+}
