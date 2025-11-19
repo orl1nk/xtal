@@ -13,11 +13,12 @@ N 100 -10 280 -10 {lab=#net4}
 N 280 -10 280 30 {lab=#net4}
 N -270 -140 -80 -140 {lab=#net1}
 N -80 190 0 190 {lab=GND}
-N -80 60 -80 190 {lab=GND}
-N -270 190 -80 190 {lab=GND}
 N 280 90 280 190 {lab=GND}
 N -270 30 -270 190 {lab=GND}
 N 0 190 280 190 {lab=GND}
+N -80 60 -80 90 {lab=#net5}
+N -80 150 -80 190 {lab=GND}
+N -270 190 -80 190 {lab=GND}
 C {vsource.sym} -270 0 0 0 {name=VDD value=1.5}
 C {devices/code_shown.sym} -610 180 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
@@ -27,11 +28,11 @@ C {devices/launcher.sym} 290 -250 0 0 {name=h3
 descr="simulate" 
 tclcommand="xschem save; xschem netlist; xschem simulate"
 }
-C {devices/launcher.sym} 290 -210 0 0 {name=h4
+C {devices/launcher.sym} 290 -200 0 0 {name=h4
 descr="annotate OP" 
 tclcommand="set show_hidden_texts 1; xschem annotate_op"
 }
-C {code_shown.sym} -610 -400 0 0 {name=s1 only_toplevel=false 
+C {code_shown.sym} -610 -390 0 0 {name=s1 only_toplevel=false 
 value="
 .include osc_bias_tb.save
 .save i(vmeas)
@@ -46,6 +47,7 @@ op
 write osc_bias_tb.raw
 *set appendwrite
 
+quit
 .endc
 "}
 C {devices/launcher.sym} 290 -160 0 0 {name=h1
@@ -79,16 +81,17 @@ C {sg13g2_pr/annotate_fet_params.sym} 660 -240 0 0 {name=annot1 ref=M1}
 C {sg13g2_pr/annotate_fet_params.sym} 500 -240 0 0 {name=annot2 ref=M2}
 C {vsource.sym} -610 290 0 0 {name=V_CFG_4 value=0
 }
-C {vsource.sym} -610 390 0 0 {name=V_CFG_5 value=1.5}
-C {vsource.sym} -420 300 0 0 {name=V_CFG_6 value=1.5}
+C {vsource.sym} -610 390 0 0 {name=V_CFG_5 value=0}
+C {vsource.sym} -420 300 0 0 {name=V_CFG_6 value=0}
 C {gnd.sym} -610 320 0 0 {name=l1 lab=GND}
 C {gnd.sym} -610 420 0 0 {name=l6 lab=GND}
 C {gnd.sym} -420 330 0 0 {name=l7 lab=GND}
 C {lab_pin.sym} -610 260 0 0 {name=p7 sig_type=std_logic lab=cfg_1}
 C {lab_pin.sym} -610 360 0 0 {name=p8 sig_type=std_logic lab=cfg_2}
 C {lab_pin.sym} -420 270 0 0 {name=p9 sig_type=std_logic lab=cfg_3}
-C {ammeter.sym} 280 60 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
+C {ammeter.sym} 280 60 0 0 {name=Vmeas savecurrent=true }
 C {vsource.sym} -420 390 0 0 {name=V_CFG_7 value=0}
 C {gnd.sym} -420 420 0 0 {name=l8 lab=GND}
 C {lab_pin.sym} -420 360 0 0 {name=p10 sig_type=std_logic lab=enable_bias}
 C {lab_pin.sym} -130 -90 0 0 {name=p11 sig_type=std_logic lab=enable_bias}
+C {vsource.sym} -80 120 0 0 {name=V_ref1 value=0}

@@ -174,7 +174,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 1620 -60 0 0 {name=M14
 l=\{l_p\}
-w=\{2*\{w_p\}\}
+w=\{3*\{w_p\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -194,7 +194,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 1620 -320 0 0 {name=M16
 l=\{l_p\}
-w=\{2*\{w_p\}\}
+w=\{3*\{w_p\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -204,7 +204,7 @@ C {ammeter.sym} 1640 -230 0 0 {name=Vmeas_PMOS1 savecurrent=true spice_ignore=0}
 C {ammeter.sym} 1640 160 0 0 {name=Vmeas_NMOS1 savecurrent=true spice_ignore=0}
 C {capa.sym} 1075 0 3 0 {name=C2
 m=1
-value=100p
+value=110p
 footprint=1206
 device="ceramic capacitor"
 }
@@ -218,7 +218,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 2120 -70 0 0 {name=M18
 l=\{l_p\}
-w=\{2*\{w_p\}\}
+w=\{3*\{w_p\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -228,7 +228,7 @@ C {lab_wire.sym} 2380 -20 0 0 {name=p12 sig_type=std_logic lab=V_OUT_2}
 C {ammeter.sym} 2140 150 0 0 {name=Vmeas_NMOS2 savecurrent=true spice_ignore=0}
 C {sg13g2_pr/sg13_lv_pmos.sym} 2120 -320 0 0 {name=M19
 l=\{l_p\}
-w=\{2*\{w_p\}\}
+w=\{3*\{w_p\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -253,7 +253,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 3370 -80 0 0 {name=M22
 l=\{l_p\}
-w=\{2*\{w_p\}\}
+w=\{3*\{w_p\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -272,7 +272,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 2510 -70 0 0 {name=M26
 l=\{l_p\}
-w=\{2*\{w_p\}\}
+w=\{3*\{w_p\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -281,7 +281,7 @@ spiceprefix=X
 C {ammeter.sym} 2530 150 0 0 {name=Vmeas_NMOS3 savecurrent=true spice_ignore=0}
 C {sg13g2_pr/sg13_lv_pmos.sym} 2510 -320 0 0 {name=M27
 l=\{l_p\}
-w=\{2*\{w_p\}\}
+w=\{3*\{w_p\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -306,7 +306,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 2900 -70 0 0 {name=M30
 l=\{l_p\}
-w=\{2*\{w_p\}\}
+w=\{3*\{w_p\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -315,7 +315,7 @@ spiceprefix=X
 C {ammeter.sym} 2920 150 0 0 {name=Vmeas_NMOS4 savecurrent=true spice_ignore=0}
 C {sg13g2_pr/sg13_lv_pmos.sym} 2900 -320 0 0 {name=M31
 l=\{l_p\}
-w=\{2*\{w_p\}\}
+w=\{3*\{w_p\}\}
 ng=1
 m=1
 model=sg13_lv_pmos

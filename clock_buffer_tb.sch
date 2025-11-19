@@ -5,7 +5,7 @@ V {}
 S {}
 F {}
 E {}
-B 2 630 -960 2120 -350 {flags=graph,private_cursor
+B 2 950 -1010 2440 -400 {flags=graph,private_cursor
 y1=0
 y2=2
 ypos1=0
@@ -14,7 +14,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=0.0005
+x2=0.001
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -45,7 +45,7 @@ N 1840 -120 1880 -120 {lab=b5}
 N 1840 -150 1880 -150 {lab=trigger}
 N 1840 -150 1840 -130 {lab=trigger}
 N 1620 0 1680 0 {lab=reset_n}
-N 440 -100 440 -80 {lab=reset_n}
+N 440 -150 440 -80 {lab=reset_n}
 N 540 -150 540 -90 {lab=VDD}
 N 540 -30 540 20 {lab=GND}
 N 650 -150 650 -80 {lab=V_IN_OSC}
@@ -72,27 +72,23 @@ C {devices/launcher.sym} 70 -170 0 0 {name=h3
 descr="simulate" 
 tclcommand="xschem save; xschem netlist; xschem simulate"
 }
-C {code_shown.sym} -17.5 -847.5 0 0 {name=s3 only_toplevel=false value="
+C {code_shown.sym} -17.5 -857.5 0 0 {name=s3 only_toplevel=false value="
 *.include inverter_starved_v2_playground.save
 .include /foss/designs/xtal/xspice/cntr_trig_board.xspice
-.param w_p=0.40u l_p=0.13u
+.param w_p=0.35u l_p=0.14u
 
 
 .control 
 save all
 
 
-tran 0.1u 0.5m
+tran 0.5u 1.0m
 write clock_buffer_tb.raw
 
-*plot V_IN1 V_OUT_1 V_OUT_2 V_OUT_3 V_OUT_4 V_OUT_BUFF
-*plot V_IN_OSC 
+set wr_singlescale
+set wr_vecnames
 
-
-*fft V_OUT_3
-*plot mag(V_OUT_3)
-
-*.measure tran yrms RMS i(VDD) from=0.1m to=0.2m
+wrdata /foss/designs/xtal/simulations/counter.txt V_OUT_BUFF b0 b1 b2 b3
 
 .endc
 "
@@ -109,7 +105,7 @@ C {devices/lab_wire.sym} 1880 0 0 1 {name=p14 sig_type=std_logic lab=b0}
 C {devices/lab_wire.sym} 1880 -100 0 1 {name=p15 sig_type=std_logic lab=b4}
 C {devices/lab_wire.sym} 1880 -120 0 1 {name=p16 sig_type=std_logic lab=b5}
 C {devices/lab_wire.sym} 1880 -150 0 1 {name=p17 sig_type=std_logic lab=trigger}
-C {devices/lab_wire.sym} 440 -100 0 0 {name=p10 sig_type=std_logic lab=reset_n}
+C {devices/lab_wire.sym} 440 -150 0 0 {name=p10 sig_type=std_logic lab=reset_n}
 C {devices/lab_wire.sym} 1620 0 0 0 {name=p18 sig_type=std_logic lab=reset_n}
 C {vsource.sym} 540 -60 0 0 {name=VDD value=1.5}
 C {gnd.sym} 540 20 0 0 {name=l2 lab=GND}
@@ -126,7 +122,7 @@ C {devices/lab_wire.sym} 1300 -50 0 0 {name=p5 sig_type=std_logic lab=VDD}
 C {devices/lab_wire.sym} 1760 -210 0 0 {name=p6 sig_type=std_logic lab=VDD}
 C {devices/gnd.sym} 1300 140 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 1760 80 0 0 {name=l3 lab=GND}
-C {devices/launcher.sym} 70 -100 0 0 {name=h2
+C {devices/launcher.sym} 80 -100 0 0 {name=h2
 descr="Load waves" 
 tclcommand="xschem raw_read $netlist_dir/clock_buffer_tb.raw tran"
 }

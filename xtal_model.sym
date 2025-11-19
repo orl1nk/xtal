@@ -1,4 +1,4 @@
-v {xschem version=3.4.7 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.2}
 G {}
 K {type=subcircuit
 format="@name @pinlist @symname"
@@ -6,6 +6,7 @@ template="name=x1"
 }
 V {}
 S {}
+F {}
 E {}
 L 4 -70 -60 -70 40 {}
 L 4 -70 40 -60 40 {}
@@ -21,9 +22,12 @@ L 4 60 -60 60 40 {}
 L 4 50 -60 60 -60 {}
 L 7 -90 -10 -70 -10 {}
 L 7 60 -10 80 -10 {}
+L 7 -10 -70 -10 -50 {}
 B 5 -92.5 -12.5 -87.5 -7.5 {name=XO1 dir=inout}
 B 5 77.5 -12.5 82.5 -7.5 {name=XO2 dir=inout}
+B 5 -12.5 -72.5 -7.5 -67.5 {name=i_pulse dir=inout}
 T {@symname} -53 34 0 0 0.3 0.3 {}
 T {@name} 5 -72 0 0 0.2 0.2 {}
 T {XO1} -95 -14 0 1 0.2 0.2 {}
 T {XO2} 85 -6 2 1 0.2 0.2 {}
+T {i_pulse} -6 -75 1 1 0.2 0.2 {}

@@ -7,7 +7,7 @@ F {}
 E {}
 N -40 70 -20 70 {lab=XO1}
 N -40 70 -40 110 {lab=XO1}
-N 150 60 150 70 {lab=#net1}
+N 150 60 150 70 {lab=XO2}
 N 10 60 10 70 {lab=XO1}
 N -20 60 -20 70 {lab=XO1}
 N -20 60 10 60 {lab=XO1}
@@ -39,10 +39,12 @@ N -90 70 -90 190 {lab=XO1}
 N 150 110 200 110 {lab=XO2}
 N 200 70 200 110 {lab=XO2}
 N 180 70 200 70 {lab=XO2}
-N 40 70 120 70 {lab=#net2}
+N 40 70 120 70 {lab=#net1}
+N 150 60 180 60 {lab=XO2}
+N 180 60 180 70 {lab=XO2}
 C {sg13g2_pr/sg13_lv_pmos.sym} 150 90 1 1 {name=M2
 l=2u
-w=2u
+w=0.5u
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -50,7 +52,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 10 90 3 0 {name=M3
 l=2u
-w=2u
+w=0.5u
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -58,7 +60,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 220 260 0 0 {name=M1
 l=0.5u
-w=5.0u
+w=2.0u
 ng=1
 m=1
 model=sg13_lv_nmos

@@ -51,9 +51,9 @@ N 750 -440 750 -390 {lab=#net3}
 N 750 -330 750 -270 {lab=#net4}
 N 180 -840 180 -790 {lab=GND}
 N 180 -960 180 -900 {lab=#net1}
-N 60 -520 60 -500 {lab=#net5}
+N 60 -520 60 -500 {lab=V_SOURCE}
 N 170 -520 280 -520 {lab=V_IN1}
-N 60 -520 120 -520 {lab=#net5}
+N 60 -520 120 -520 {lab=V_SOURCE}
 N 1140 -590 1210 -590 {lab=V_OUT_1}
 N 1140 -480 1210 -480 {lab=V_OUT_1}
 N 1250 -540 1250 -510 {lab=V_OUT_2}
@@ -61,7 +61,7 @@ N 1250 -590 1360 -590 {lab=#net1}
 N 1250 -480 1360 -480 {lab=GND}
 N 1140 -530 1140 -480 {lab=V_OUT_1}
 N 1140 -590 1140 -530 {lab=V_OUT_1}
-N 1250 -450 1250 -400 {lab=#net6}
+N 1250 -450 1250 -400 {lab=#net5}
 N 750 -530 1140 -530 {lab=V_OUT_1}
 N 1250 -140 1360 -140 {lab=GND}
 N 1250 -960 1360 -960 {lab=#net1}
@@ -69,20 +69,20 @@ N 1250 -960 1250 -870 {lab=#net1}
 N 1250 -840 1360 -840 {lab=#net1}
 N 1360 -960 1360 -840 {lab=#net1}
 N 1140 -840 1210 -840 {lab=V_BIAS_P}
-N 1250 -810 1250 -780 {lab=#net7}
+N 1250 -810 1250 -780 {lab=#net6}
 N 1360 -840 1360 -590 {lab=#net1}
 N 860 -960 1250 -960 {lab=#net1}
 N 670 -910 670 -840 {lab=V_BIAS_P}
 N 640 -840 670 -840 {lab=V_BIAS_P}
 N 670 -910 1140 -910 {lab=V_BIAS_P}
 N 1140 -910 1140 -840 {lab=V_BIAS_P}
-N 1250 -720 1250 -620 {lab=#net8}
+N 1250 -720 1250 -620 {lab=#net7}
 N 1360 -480 1360 -250 {lab=GND}
 N 1360 -250 1360 -140 {lab=GND}
 N 1250 -220 1250 -140 {lab=GND}
 N 1250 -250 1360 -250 {lab=GND}
 N 1150 -250 1210 -250 {lab=V_BIAS_N}
-N 1250 -340 1250 -280 {lab=#net9}
+N 1250 -340 1250 -280 {lab=#net8}
 N 650 -310 1150 -310 {lab=V_BIAS_N}
 N 1150 -310 1150 -250 {lab=V_BIAS_N}
 N 860 -140 1250 -140 {lab=GND}
@@ -104,30 +104,30 @@ N 460 -360 560 -360 {lab=V_BIAS_N}
 N 280 -520 520 -520 {lab=V_IN1}
 N 460 -750 540 -750 {lab=V_BIAS_P}
 N 2500 -960 2500 -810 {lab=#net1}
-N 2500 -750 2500 -630 {lab=#net10}
-N 2500 -460 2500 -340 {lab=#net11}
+N 2500 -750 2500 -630 {lab=#net9}
+N 2500 -460 2500 -340 {lab=#net10}
 N 2500 -280 2500 -140 {lab=GND}
 N 1530 -590 1600 -590 {lab=V_OUT_2}
 N 1530 -480 1600 -480 {lab=V_OUT_2}
 N 1640 -590 1750 -590 {lab=#net1}
 N 1640 -480 1750 -480 {lab=GND}
-N 1640 -450 1640 -400 {lab=#net12}
+N 1640 -450 1640 -400 {lab=#net11}
 N 1640 -140 1750 -140 {lab=GND}
 N 1640 -960 1750 -960 {lab=#net1}
 N 1640 -960 1640 -870 {lab=#net1}
 N 1640 -840 1750 -840 {lab=#net1}
 N 1750 -960 1750 -840 {lab=#net1}
 N 1540 -840 1600 -840 {lab=V_BIAS_P}
-N 1640 -810 1640 -780 {lab=#net13}
+N 1640 -810 1640 -780 {lab=#net12}
 N 1750 -840 1750 -590 {lab=#net1}
 N 1360 -960 1640 -960 {lab=#net1}
-N 1640 -720 1640 -620 {lab=#net14}
+N 1640 -720 1640 -620 {lab=#net13}
 N 1750 -480 1750 -250 {lab=GND}
 N 1750 -250 1750 -140 {lab=GND}
 N 1640 -220 1640 -140 {lab=GND}
 N 1640 -250 1750 -250 {lab=GND}
 N 1540 -250 1600 -250 {lab=V_BIAS_N}
-N 1640 -340 1640 -280 {lab=#net15}
+N 1640 -340 1640 -280 {lab=#net14}
 N 1360 -140 1640 -140 {lab=GND}
 N 1530 -540 1530 -480 {lab=V_OUT_2}
 N 1250 -540 1530 -540 {lab=V_OUT_2}
@@ -144,23 +144,23 @@ N 1920 -590 1990 -590 {lab=V_OUT_3}
 N 1920 -480 1990 -480 {lab=V_OUT_3}
 N 2030 -590 2140 -590 {lab=#net1}
 N 2030 -480 2140 -480 {lab=GND}
-N 2030 -450 2030 -400 {lab=#net16}
+N 2030 -450 2030 -400 {lab=#net15}
 N 2030 -140 2140 -140 {lab=GND}
 N 2030 -960 2140 -960 {lab=#net1}
 N 2030 -960 2030 -870 {lab=#net1}
 N 2030 -840 2140 -840 {lab=#net1}
 N 2140 -960 2140 -840 {lab=#net1}
 N 1930 -840 1990 -840 {lab=V_BIAS_P}
-N 2030 -810 2030 -780 {lab=#net17}
+N 2030 -810 2030 -780 {lab=#net16}
 N 2140 -840 2140 -590 {lab=#net1}
 N 1750 -960 2030 -960 {lab=#net1}
-N 2030 -720 2030 -620 {lab=#net18}
+N 2030 -720 2030 -620 {lab=#net17}
 N 2140 -480 2140 -250 {lab=GND}
 N 2140 -250 2140 -140 {lab=GND}
 N 2030 -220 2030 -140 {lab=GND}
 N 2030 -250 2140 -250 {lab=GND}
 N 1930 -250 1990 -250 {lab=V_BIAS_N}
-N 2030 -340 2030 -280 {lab=#net19}
+N 2030 -340 2030 -280 {lab=#net18}
 N 1750 -140 2030 -140 {lab=GND}
 N 1920 -540 1920 -480 {lab=V_OUT_3}
 N 1640 -540 1920 -540 {lab=V_OUT_3}
@@ -186,7 +186,7 @@ N 520 -530 540 -530 {lab=V_IN1}
 N 670 -490 710 -490 {lab=V_OUT_1}
 N 710 -530 710 -490 {lab=V_OUT_1}
 N 700 -530 710 -530 {lab=V_OUT_1}
-N 610 -530 640 -530 {lab=#net20}
+N 610 -530 640 -530 {lab=#net19}
 N 550 -560 550 -530 {lab=V_IN1}
 N 550 -560 580 -560 {lab=V_IN1}
 N 580 -560 580 -530 {lab=V_IN1}
@@ -215,7 +215,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 730 -580 0 0 {name=M2
 l=\{l_p_i\}
-w=\{2*\{w_p_i\}\}
+w=\{3*\{w_p_i\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -295,32 +295,32 @@ write inverter_starved_playground.raw
 "
 spice_ignore=true}
 C {sg13g2_pr/sg13_lv_nmos.sym} 730 -240 0 0 {name=M3
-l=\{l_p\}
-w=\{w_p\}
+l=\{l_p_i\}
+w=\{w_p_i\}
 ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 730 -840 0 0 {name=M4
-l=\{l_p\}
-w=\{2*\{w_p\}\}
+l=\{l_p_i\}
+w=\{3*\{w_p_i\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 580 -240 0 1 {name=M5
-l=\{l_p\}
-w=\{w_p\}
+l=\{l_p_i\}
+w=\{w_p_i\}
 ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 560 -840 0 1 {name=M6
-l=\{l_p\}
-w=\{2*\{w_p\}\}
+l=\{l_p_i\}
+w=\{3*\{w_p_i\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -335,14 +335,15 @@ C {gnd.sym} 60 -440 0 0 {name=l4 lab=GND
 }
 C {capa.sym} 145 -520 3 0 {name=C1
 m=1
-value=200p
+value=110p
 footprint=1206
 device="ceramic capacitor"
 }
-C {code_shown.sym} 537.5 -1757.5 0 1 {name=s3 only_toplevel=false value="
+C {code_shown.sym} 547.5 -1737.5 0 1 {name=s3 only_toplevel=false value="
 .include inverter_starved_playground.save
-.param w_p_i=0.4u l_p_i=0.13u
+*.param w_p_i=0.4u l_p_i=0.13u
 *.param w_p_i=0.65u l_p_i=0.145u
+.param w_p_i=0.35u l_p_i=0.14u
 .param w_p=0.4u l_p=0.13u
 .meas tran iavg_stage_1_pmos AVG i(Vmeas_PMOS1)
 .meas tran iavg_stage_1_nmos AVG i(Vmeas_NMOS1)
@@ -357,16 +358,16 @@ C {code_shown.sym} 537.5 -1757.5 0 1 {name=s3 only_toplevel=false value="
 .meas tran iavg_VDD AVG i(VDD)
 
 .control 
-*save all
-save V_OUT_BUFF
+save all
+*save V_SOURCE V_OUT_BUFF
 
 op
 write inverter_starved_v1_playground.raw
 set appendwrite
 
-tran 0.05u 2m
+tran 0.01u 0.5m
 
-*plot V_IN1 V_OUT_1 V_OUT_2 V_OUT_3 V_OUT_4 V_OUT_BUFF
+plot V_SOURCE V_IN1 V_OUT_1 V_OUT_2 V_OUT_3 V_OUT_4 V_OUT_BUFF
 *plot V_IN1 V_OUT_1 V_OUT_BUFF
 
 
@@ -391,7 +392,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 1230 -590 0 0 {name=M8
 l=\{l_p_i\}
-w=\{2*\{w_p_i\}\}
+w=\{3*\{w_p_i\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -400,8 +401,8 @@ spiceprefix=X
 C {lab_wire.sym} 1490 -540 0 0 {name=p4 sig_type=std_logic lab=V_OUT_2}
 C {ammeter.sym} 1250 -370 0 0 {name=Vmeas_NMOS2 savecurrent=true spice_ignore=0}
 C {sg13g2_pr/sg13_lv_pmos.sym} 1230 -840 0 0 {name=M9
-l=\{l_p\}
-w=\{2*\{w_p\}\}
+l=\{l_p_i\}
+w=\{3*\{w_p_i\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -409,8 +410,8 @@ spiceprefix=X
 }
 C {ammeter.sym} 1250 -750 0 0 {name=Vmeas_PMOS2 savecurrent=true spice_ignore=0}
 C {sg13g2_pr/sg13_lv_nmos.sym} 1230 -250 0 0 {name=M10
-l=\{l_p\}
-w=\{w_p\}
+l=\{l_p_i\}
+w=\{w_p_i\}
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -427,7 +428,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 2480 -600 0 0 {name=M12
 l=\{l_p_i\}
-w=\{2*\{w_p_i\}\}
+w=\{3*\{w_p_i\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -467,7 +468,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 1620 -590 0 0 {name=M16
 l=\{l_p_i\}
-w=\{2*\{w_p_i\}\}
+w=\{3*\{w_p_i\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -475,8 +476,8 @@ spiceprefix=X
 }
 C {ammeter.sym} 1640 -370 0 0 {name=Vmeas_NMOS3 savecurrent=true spice_ignore=0}
 C {sg13g2_pr/sg13_lv_pmos.sym} 1620 -840 0 0 {name=M17
-l=\{l_p\}
-w=\{2*\{w_p\}\}
+l=\{l_p_i\}
+w=\{3*\{w_p_i\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -484,8 +485,8 @@ spiceprefix=X
 }
 C {ammeter.sym} 1640 -750 0 0 {name=Vmeas_PMOS3 savecurrent=true spice_ignore=0}
 C {sg13g2_pr/sg13_lv_nmos.sym} 1620 -250 0 0 {name=M18
-l=\{l_p\}
-w=\{w_p\}
+l=\{l_p_i\}
+w=\{w_p_i\}
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -503,7 +504,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 2010 -590 0 0 {name=M20
 l=\{l_p_i\}
-w=\{2*\{w_p_i\}\}
+w=\{3*\{w_p_i\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -511,8 +512,8 @@ spiceprefix=X
 }
 C {ammeter.sym} 2030 -370 0 0 {name=Vmeas_NMOS4 savecurrent=true spice_ignore=0}
 C {sg13g2_pr/sg13_lv_pmos.sym} 2010 -840 0 0 {name=M21
-l=\{l_p\}
-w=\{2*\{w_p\}\}
+l=\{l_p_i\}
+w=\{3*\{w_p_i\}\}
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -520,11 +521,13 @@ spiceprefix=X
 }
 C {ammeter.sym} 2030 -750 0 0 {name=Vmeas_PMOS4 savecurrent=true spice_ignore=0}
 C {sg13g2_pr/sg13_lv_nmos.sym} 2010 -250 0 0 {name=M22
-l=\{l_p\}
-w=\{w_p\}
+l=\{l_p_i\}
+w=\{w_p_i\}
 ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
 C {lab_wire.sym} 2310 -540 0 0 {name=p9 sig_type=std_logic lab=V_OUT_4}
+C {lab_wire.sym} 60 -520 0 0 {name=p10 sig_type=std_logic lab=V_SOURCE
+}

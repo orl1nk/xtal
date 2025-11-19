@@ -1,8 +1,9 @@
-v {xschem version=3.4.7 file_version=1.2}
+v {xschem version=3.4.8RC file_version=1.2}
 G {}
 K {}
 V {}
 S {}
+F {}
 E {}
 N 120 400 120 440 {lab=GND}
 N -520 -40 -520 400 {lab=GND}
@@ -67,8 +68,12 @@ C {lab_pin.sym} -940 220 0 0 {name=p1 sig_type=std_logic lab=cfg_1}
 C {lab_pin.sym} -940 320 0 0 {name=p2 sig_type=std_logic lab=cfg_2}
 C {lab_pin.sym} -750 230 0 0 {name=p3 sig_type=std_logic lab=cfg_3}
 C {lab_pin.sym} 150 -400 2 0 {name=p4 sig_type=std_logic lab=cfg_1}
-C {lab_pin.sym} 150 -380 2 0 {name=p5 sig_type=std_logic lab=cfg_2}
-C {lab_pin.sym} 150 -360 2 0 {name=p6 sig_type=std_logic lab=cfg_3}
+C {lab_pin.sym} 150 -360 2 0 {name=p5 sig_type=std_logic lab=cfg_2}
+C {lab_pin.sym} 150 -380 2 0 {name=p6 sig_type=std_logic lab=cfg_3}
 C {ammeter.sym} 270 -200 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
 C {devices/ngspice_get_value.sym} 230 240 0 1 {name=r4 node=@n.x3.xm1.nsg13_lv_nmos[gm]
 descr="gm="}
+C {vsource.sym} -900 100 0 0 {name=V_CFG_7 value=0}
+C {gnd.sym} -900 130 0 0 {name=l8 lab=GND}
+C {lab_pin.sym} -900 70 0 0 {name=p10 sig_type=std_logic lab=enable_bias}
+C {lab_pin.sym} -80 -400 0 0 {name=p7 sig_type=std_logic lab=enable_bias}

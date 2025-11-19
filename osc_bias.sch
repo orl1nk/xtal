@@ -233,14 +233,14 @@ model=sg13_lv_pmos
 spiceprefix=X}
 C {sg13g2_pr/sg13_lv_pmos.sym} 1220 -170 0 0 {name=M8
 l=10u
-w=0.5u
+w=0.25u
 ng=1
-m=20
+m=8
 model=sg13_lv_pmos
 spiceprefix=X}
 C {sg13g2_pr/sg13_lv_pmos.sym} 930 -10 0 0 {name=M9
 l=10u
-w=0.5u
+w=0.25u
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -248,7 +248,7 @@ spiceprefix=X}
 C {iopin.sym} 870 -10 2 0 {name=p6 lab=cfg_bias_2}
 C {sg13g2_pr/sg13_lv_pmos.sym} 1220 -10 0 0 {name=M10
 l=10u
-w=1u
+w=0.25u
 ng=1
 m=1
 model=sg13_lv_pmos
@@ -256,7 +256,7 @@ spiceprefix=X}
 C {iopin.sym} 1160 -10 2 0 {name=p7 lab=cfg_bias_3}
 C {sg13g2_pr/sg13_lv_nmos.sym} 180 500 0 1 {name=M11
 l=10u
-w=0.2u
+w=0.25u
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -266,16 +266,16 @@ C {ammeter.sym} 160 580 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
 C {sg13g2_pr/annotate_fet_params.sym} 460 20 0 0 {name=annot2 ref=M6}
 C {sg13g2_pr/annotate_fet_params.sym} 860 240 0 0 {name=annot3 ref=M7}
 C {sg13g2_pr/sg13_lv_pmos.sym} 1590 -160 0 1 {name=M12
-l=0.13u
-w=0.8u
+l=0.14u
+w=1.05u
 ng=1
 m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 1590 450 0 1 {name=M13
-l=0.13u
-w=0.4u
+l=0.14u
+w=0.35u
 ng=1
 m=1
 model=sg13_lv_nmos
@@ -284,24 +284,24 @@ spiceprefix=X
 C {ammeter.sym} 1570 -230 0 0 {name=Vmeas1 savecurrent=true spice_ignore=0}
 C {ammeter.sym} 1570 550 0 0 {name=Vmeas2 savecurrent=true spice_ignore=0}
 C {sg13g2_pr/sg13_lv_nmos.sym} 1590 300 0 1 {name=M14
-l=10u
-w=0.4u
+l=8u
+w=0.35u
 ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 1590 140 0 1 {name=M15
-l=10u
-w=0.4u
+l=8u
+w=0.35u
 ng=1
 m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 1590 10 0 1 {name=M16
-l=10u
-w=0.4u
+l=8u
+w=0.35u
 ng=1
 m=1
 model=sg13_lv_nmos
